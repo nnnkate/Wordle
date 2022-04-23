@@ -32,7 +32,7 @@
                     <constraints>
                         <constraint firstItem="6xn-ll-DKf" firstAttribute="centerY" secondItem="s5m-Ip-zvf" secondAttribute="centerY" id="Fbb-uv-UUP"/>
                         <constraint firstItem="6xn-ll-DKf" firstAttribute="centerX" secondItem="s5m-Ip-zvf" secondAttribute="centerX" id="UbS-PU-EvI"/>
-                        <constraint firstAttribute="width" constant="60" id="bcJ-Sb-D8D"/>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="60" id="bcJ-Sb-D8D"/>
                         <constraint firstAttribute="width" secondItem="s5m-Ip-zvf" secondAttribute="height" multiplier="1:1" id="kEq-Qt-hDt"/>
                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="yQZ-Ks-Yvk"/>
                     </constraints>
@@ -43,6 +43,7 @@
             <constraints>
                 <constraint firstItem="s5m-Ip-zvf" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="CxW-SV-88Y"/>
                 <constraint firstItem="s5m-Ip-zvf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ZAP-I9-OfV"/>
+                <constraint firstItem="s5m-Ip-zvf" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="mkr-rQ-8JS"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="133.33333333333334" y="268.52678571428572"/>

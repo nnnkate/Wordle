@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LetterBoxView" customModule="Wordle" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="pMG-lT-fah"/>
+                <outlet property="letterLabel" destination="6xn-ll-DKf" id="ZKj-2C-R6m"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="120" height="158"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s5m-Ip-zvf">
+                    <rect key="frame" x="30" y="49" width="60" height="60"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xn-ll-DKf">
+                            <rect key="frame" x="30" y="30" width="0.0" height="0.0"/>
+                            <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="40"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.67329143599999997" green="0.56113601759999998" blue="0.99325615170000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="6xn-ll-DKf" firstAttribute="centerY" secondItem="s5m-Ip-zvf" secondAttribute="centerY" id="Fbb-uv-UUP"/>
+                        <constraint firstItem="6xn-ll-DKf" firstAttribute="centerX" secondItem="s5m-Ip-zvf" secondAttribute="centerX" id="UbS-PU-EvI"/>
+                        <constraint firstAttribute="width" constant="60" id="bcJ-Sb-D8D"/>
+                        <constraint firstAttribute="width" secondItem="s5m-Ip-zvf" secondAttribute="height" multiplier="1:1" id="kEq-Qt-hDt"/>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="yQZ-Ks-Yvk"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="s5m-Ip-zvf" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="CxW-SV-88Y"/>
+                <constraint firstItem="s5m-Ip-zvf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ZAP-I9-OfV"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="133.33333333333334" y="268.52678571428572"/>
+        </view>
+    </objects>
+</document>

@@ -8,6 +8,6 @@
 struct LetterBox {
     
     var letter: Character?
-    var status: Int?
+    var status: Evaluation
     
 }

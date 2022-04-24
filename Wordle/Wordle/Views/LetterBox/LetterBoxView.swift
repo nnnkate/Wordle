@@ -45,16 +45,23 @@ class LetterBoxView: UIView {
         setUpView()
     }
     
-//    func updateData(letterBox: LetterBox) {
-//        letterLabel.text = String(letterBox.letter)
-//    }
+    func updateData(letterBox: LetterBox) {
+        self.letterBox = letterBox
+        
+//        switch letterBox.status {
+//        case .wrong:
+//            
+//        case .correct:
+//            
+//        case .wrongLocation:
+//            
+//        }
+    }
     
     private func setUpView() {
         createXib()
         
-//        if let header = header {
-//            updateData(header: header)
-//        }
+        //add functionality
     }
     
     private func createXib() {

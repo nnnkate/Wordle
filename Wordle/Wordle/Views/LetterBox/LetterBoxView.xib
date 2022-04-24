@@ -9,8 +9,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LetterBoxView" customModule="Wordle" customModuleProvider="target">
             <connections>
-                <outlet property="contentView" destination="iN0-l3-epB" id="pMG-lT-fah"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="jcb-Ge-Mke"/>
                 <outlet property="letterLabel" destination="6xn-ll-DKf" id="ZKj-2C-R6m"/>
+                <outlet property="letterStatusView" destination="s5m-Ip-zvf" id="4wP-ub-Ar9"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

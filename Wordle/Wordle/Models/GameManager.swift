@@ -9,6 +9,7 @@ class GameManager {
     
     //temporary way
     let lettersCount = 5
+    let attemptsNumber = 5
     let currentWord = "start".uppercased()
     
 }

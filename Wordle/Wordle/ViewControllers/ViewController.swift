@@ -26,14 +26,11 @@ class ViewController: UIViewController {
             lettersContainer.axis = .horizontal
             lettersContainer.distribution = .fillProportionally
             lettersContainer.spacing = 5
-            lettersContainer.translatesAutoresizingMaskIntoConstraints = false
-
+            
             wordsContainer.addArrangedSubview(lettersContainer)
-            for _ in 0..<gameManager.lettersCount {
+            for _ in 0..<gameManager.attemptsNumber {
                 let letterBoxView = LetterBoxView()
                 
-                letterBoxView.translatesAutoresizingMaskIntoConstraints = false
-            
                 lettersContainer.addArrangedSubview(letterBoxView)
             }
         }

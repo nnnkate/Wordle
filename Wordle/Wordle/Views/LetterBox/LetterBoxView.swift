@@ -15,15 +15,8 @@ class LetterBoxView: UIView {
     @IBOutlet weak var letterStatusView: UIView!
     
     var letterBox: LetterBox? {
-        get {
-            return self.letterBox
-        }
-        set {
-            guard let newValue = newValue, let newValueLetter = newValue.letter  else {
-                letterLabel.text = ""
-                return
-            }
-            letterLabel.text = String(newValueLetter)
+        didSet {
+            updateData()
         }
     }
     
@@ -47,8 +40,13 @@ class LetterBoxView: UIView {
         setUpView()
     }
     
-    func updateData(letterBox: LetterBox) {
-        self.letterBox = letterBox
+    func updateData() {
+        guard let letterBox = letterBox  else {
+            letterLabel.text = ""
+            return
+        }
+        letterLabel.text = String(letterBox.letter)
+        
         
         switch letterBox.status {
         case .wrong:
@@ -57,6 +55,8 @@ class LetterBoxView: UIView {
             letterStatusView.backgroundColor = .green
         case .wrongLocation:
             letterStatusView.backgroundColor = .orange
+        default:
+            letterStatusView.backgroundColor = .clear
         }
     }
     

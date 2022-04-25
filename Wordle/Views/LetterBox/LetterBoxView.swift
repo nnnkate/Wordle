@@ -12,9 +12,7 @@ class LetterBoxView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var letterLabel: UILabel!
     
-    @IBOutlet weak var letterStatusView: UIView!
-    
-    var letterBox: LetterBox? {
+    private var letterBox: LetterBox? {
         didSet {
             updateView()
         }
@@ -40,30 +38,11 @@ class LetterBoxView: UIView {
         setUpView()
     }
     
-    func updateView() {
-        guard let letterBox = letterBox  else {
-            letterLabel.text = ""
-            return
-        }
-        letterLabel.text = String(letterBox.letter)
-        
-        
-        switch letterBox.status {
-        case .wrong:
-            letterStatusView.backgroundColor = .darkGray
-        case .correct:
-            letterStatusView.backgroundColor = .green
-        case .wrongLocation:
-            letterStatusView.backgroundColor = .orange
-        default:
-            letterStatusView.backgroundColor = .clear
-        }
-    }
-    
     private func setUpView() {
         createXib()
+        contentView.setBorder()
         
-        //add functionality
+        updateView()
     }
     
     private func createXib() {
@@ -74,5 +53,45 @@ class LetterBoxView: UIView {
         contentView.frame = bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
+    
+    // MARK: - View Update
+    
+    func updateLetterBox(letterBox: LetterBox?) {
+        self.letterBox = letterBox
+    }
+     
+    private func updateView() {
+        updateLabel(letter: letterBox?.letter)
+        updateBackground(status: letterBox?.status)
+    }
 
+    private func updateLabel(letter: String?) {
+        letterLabel.text = letter?.uppercased()
+    }
+
+    private func updateBackground(status: Evaluation?) {
+        contentView.backgroundColor = status?.backgroundColor ?? .clear
+    }
+    
+}
+
+extension Evaluation {
+    var backgroundColor: UIColor {
+        switch self {
+        case .wrong:
+            return .darkGray
+            
+        case .wrongLocation:
+            return .orange
+            
+        case .correct:
+            return .green
+        }
+    }
+}
+
+extension Optional where Wrapped == Evaluation {
+    var backgroundColor: UIColor {
+        self?.backgroundColor ?? .clear
+    }
 }

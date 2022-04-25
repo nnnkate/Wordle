@@ -6,7 +6,7 @@
 //
 
 struct LetterBox {
-    var letter: Character
+    var letter: String
     var status: Evaluation?
     
 }

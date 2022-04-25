@@ -11,43 +11,32 @@
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="jcb-Ge-Mke"/>
                 <outlet property="letterLabel" destination="6xn-ll-DKf" id="ZKj-2C-R6m"/>
-                <outlet property="letterStatusView" destination="s5m-Ip-zvf" id="4wP-ub-Ar9"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="120" height="158"/>
+            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s5m-Ip-zvf">
-                    <rect key="frame" x="30" y="49" width="60" height="60"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xn-ll-DKf">
-                            <rect key="frame" x="30" y="30" width="0.0" height="0.0"/>
-                            <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="40"/>
-                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" red="0.67329143599999997" green="0.56113601759999998" blue="0.99325615170000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xn-ll-DKf">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                     <constraints>
-                        <constraint firstItem="6xn-ll-DKf" firstAttribute="centerY" secondItem="s5m-Ip-zvf" secondAttribute="centerY" id="Fbb-uv-UUP"/>
-                        <constraint firstItem="6xn-ll-DKf" firstAttribute="centerX" secondItem="s5m-Ip-zvf" secondAttribute="centerX" id="UbS-PU-EvI"/>
-                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="60" id="bcJ-Sb-D8D"/>
-                        <constraint firstAttribute="width" secondItem="s5m-Ip-zvf" secondAttribute="height" multiplier="1:1" id="kEq-Qt-hDt"/>
-                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="yQZ-Ks-Yvk"/>
+                        <constraint firstAttribute="width" secondItem="6xn-ll-DKf" secondAttribute="height" multiplier="1:1" id="ogo-ux-yOU"/>
                     </constraints>
-                </view>
+                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="40"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" red="0.67329143599999997" green="0.56113601759999998" blue="0.99325615170000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstItem="s5m-Ip-zvf" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="CxW-SV-88Y"/>
-                <constraint firstItem="s5m-Ip-zvf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ZAP-I9-OfV"/>
-                <constraint firstItem="s5m-Ip-zvf" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="mkr-rQ-8JS"/>
+                <constraint firstItem="6xn-ll-DKf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cA1-zW-FYL"/>
+                <constraint firstItem="6xn-ll-DKf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rV3-BK-jzS"/>
+                <constraint firstItem="6xn-ll-DKf" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="uPl-9O-eLE"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="133.33333333333334" y="268.52678571428572"/>
+            <point key="canvasLocation" x="132.60869565217394" y="257.14285714285711"/>
         </view>
     </objects>
 </document>

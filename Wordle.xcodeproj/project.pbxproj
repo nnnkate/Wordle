@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8508796A281746800067408A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85087969281746800067408A /* UIView+Extension.swift */; };
 		85C3254F2812ACAF002BFBF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C3254E2812ACAF002BFBF5 /* AppDelegate.swift */; };
 		85C325512812ACAF002BFBF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C325502812ACAF002BFBF5 /* SceneDelegate.swift */; };
 		85C325532812ACAF002BFBF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C325522812ACAF002BFBF5 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		85087969281746800067408A /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		85C3254B2812ACAF002BFBF5 /* Wordle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C3254E2812ACAF002BFBF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85C325502812ACAF002BFBF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,22 @@
 			path = Letter;
 			sourceTree = "<group>";
 		};
+		85087968281746470067408A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8508796B281746840067408A /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8508796B281746840067408A /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				85087969281746800067408A /* UIView+Extension.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		85C325422812ACAE002BFBF5 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +93,7 @@
 		85C3254D2812ACAF002BFBF5 /* Wordle */ = {
 			isa = PBXGroup;
 			children = (
+				85087968281746470067408A /* Extensions */,
 				85C325632812ACC5002BFBF5 /* Models */,
 				85C325622812ACBC002BFBF5 /* Views */,
 				85C325642812ACD1002BFBF5 /* ViewControllers */,
@@ -212,6 +231,7 @@
 			files = (
 				85C325532812ACAF002BFBF5 /* ViewController.swift in Sources */,
 				85C3254F2812ACAF002BFBF5 /* AppDelegate.swift in Sources */,
+				8508796A281746800067408A /* UIView+Extension.swift in Sources */,
 				85C325682812AD66002BFBF5 /* LetterBoxView.swift in Sources */,
 				85FD417F281447EE000191AD /* GameManager.swift in Sources */,
 				85C3256C2812AEDF002BFBF5 /* Evaluation.swift in Sources */,

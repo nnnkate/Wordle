@@ -10,13 +10,16 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var wordsContainer: UIStackView!
+    @IBOutlet weak var keyboardContainer: KeyboardView!
     
-    let gameManager = GameManager()
+    private let gameManager = GameManager()
+    private let keyboardManager = KeyboardManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         addCells()
+        keyboardContainer.updateKeyboardButtons(keyboardManager.keyboardLetters)
     }
     
     private func addCells() {
@@ -30,6 +33,9 @@ class ViewController: UIViewController {
             wordsContainer.addArrangedSubview(lettersContainer)
             for _ in 0..<gameManager.attemptsNumber {
                 let letterBoxView = LetterBoxView()
+                
+                letterBoxView.translatesAutoresizingMaskIntoConstraints = false
+                letterBoxView.widthAnchor.constraint(equalTo: letterBoxView.heightAnchor).isActive = true
                 
                 lettersContainer.addArrangedSubview(letterBoxView)
             }

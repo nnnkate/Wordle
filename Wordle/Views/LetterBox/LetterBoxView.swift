@@ -88,10 +88,18 @@ extension Evaluation {
             return .green
         }
     }
+    
+    var fontColor: UIColor {
+        .white
+    }
 }
 
 extension Optional where Wrapped == Evaluation {
     var backgroundColor: UIColor {
         self?.backgroundColor ?? .clear
+    }
+    
+    var fontColor: UIColor {
+        self?.backgroundColor ?? .darkGray
     }
 }

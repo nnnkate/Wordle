@@ -16,31 +16,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="598-bn-D2b">
-                                <rect key="frame" x="-17" y="84" width="448" height="368"/>
+                                <rect key="frame" x="40" y="84" width="334" height="627"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="odO-3v-W4u">
-                                        <rect key="frame" x="40" y="0.0" width="368" height="368"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="odO-3v-W4u">
+                                        <rect key="frame" x="40" y="0.0" width="240" height="128"/>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.67329143599999997" green="0.56113601759999998" blue="0.99325615170000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="odO-3v-W4u" firstAttribute="leading" secondItem="598-bn-D2b" secondAttribute="leading" constant="40" id="1uH-tI-LoC"/>
-                                    <constraint firstItem="odO-3v-W4u" firstAttribute="centerX" secondItem="598-bn-D2b" secondAttribute="centerX" id="8wa-mU-bkp"/>
-                                    <constraint firstItem="odO-3v-W4u" firstAttribute="width" secondItem="598-bn-D2b" secondAttribute="height" multiplier="1:1" id="HtD-4B-lHS"/>
-                                    <constraint firstItem="odO-3v-W4u" firstAttribute="height" secondItem="598-bn-D2b" secondAttribute="height" id="M3a-Ls-RLt"/>
-                                    <constraint firstItem="odO-3v-W4u" firstAttribute="top" secondItem="598-bn-D2b" secondAttribute="top" id="i0y-iV-nWJ"/>
+                                    <constraint firstItem="odO-3v-W4u" firstAttribute="width" secondItem="598-bn-D2b" secondAttribute="width" id="mXg-F8-U77"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90H-zv-jYV">
+                                <rect key="frame" x="10" y="553" width="394" height="269"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="W0c-yz-PGB" customClass="KeyboardView" customModule="Wordle" customModuleProvider="target">
+                                        <rect key="frame" x="-47" y="-36" width="334" height="200"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.67329143599999997" green="0.56113601759999998" blue="0.99325615170000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="W0c-yz-PGB" firstAttribute="width" secondItem="90H-zv-jYV" secondAttribute="width" id="LF0-wy-ZJd"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.67329143599999997" green="0.56113601759999998" blue="0.99325615170000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="598-bn-D2b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0QJ-3i-0Ou"/>
-                            <constraint firstItem="598-bn-D2b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="fT1-kd-5eR"/>
-                            <constraint firstItem="598-bn-D2b" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:2" id="k24-xd-7J6"/>
+                            <constraint firstItem="598-bn-D2b" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="IlJ-wS-WvN"/>
+                            <constraint firstItem="90H-zv-jYV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="QAJ-o0-xNo"/>
+                            <constraint firstItem="90H-zv-jYV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="Qjj-Fp-Pmh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="90H-zv-jYV" secondAttribute="bottom" constant="40" id="VN5-rT-SHs"/>
+                            <constraint firstItem="598-bn-D2b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="ZTG-Cn-Hl5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="598-bn-D2b" secondAttribute="leading" constant="-40" id="ijC-sQ-jNC"/>
+                            <constraint firstItem="598-bn-D2b" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.7" id="k5V-yJ-Yei"/>
+                            <constraint firstItem="90H-zv-jYV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qMQ-Ke-23g"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="keyboardContainer" destination="W0c-yz-PGB" id="hKO-Lt-5Dt"/>
                         <outlet property="wordsContainer" destination="odO-3v-W4u" id="gll-Nt-vgo"/>
                     </connections>
                 </viewController>

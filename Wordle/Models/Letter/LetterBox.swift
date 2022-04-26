@@ -8,5 +8,4 @@
 struct LetterBox {
     var letter: String
     var status: Evaluation?
-    
 }

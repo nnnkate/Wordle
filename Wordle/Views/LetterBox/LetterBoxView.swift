@@ -41,6 +41,7 @@ class LetterBoxView: UIView {
     private func setUpView() {
         createXib()
         contentView.setBorder()
+        contentView.setCornerRadius()
         
         updateView()
     }

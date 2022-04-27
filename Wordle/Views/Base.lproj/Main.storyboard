@@ -22,7 +22,7 @@
                                         <rect key="frame" x="40" y="0.0" width="240" height="128"/>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.67329143599999997" green="0.56113601759999998" blue="0.99325615170000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="odO-3v-W4u" firstAttribute="width" secondItem="598-bn-D2b" secondAttribute="width" id="mXg-F8-U77"/>
                                 </constraints>
@@ -34,14 +34,14 @@
                                         <rect key="frame" x="-47" y="-36" width="334" height="200"/>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.67329143599999997" green="0.56113601759999998" blue="0.99325615170000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="W0c-yz-PGB" firstAttribute="width" secondItem="90H-zv-jYV" secondAttribute="width" id="LF0-wy-ZJd"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.67329143599999997" green="0.56113601759999998" blue="0.99325615170000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="598-bn-D2b" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="IlJ-wS-WvN"/>
                             <constraint firstItem="90H-zv-jYV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="QAJ-o0-xNo"/>

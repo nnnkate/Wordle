@@ -52,7 +52,6 @@ class DeleteButtonView: UIButton {
     
     @objc private func handleButtonTap() {
         print("Delete")
-        print(self.currentImage as Any)
     }
     
     // MARK: - View Update

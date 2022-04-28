@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CharacterKeyboardButtonView: BaseKeyboardButton {
+final class CharacterKeyboardButtonView: BaseKeyboardButtonView {
     private var keyboardButton: LetterBox! {
         didSet {
             updateView()

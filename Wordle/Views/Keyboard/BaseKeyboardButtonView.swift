@@ -1,5 +1,5 @@
 //
-//  BaseKeyboardButton.swift
+//  BaseKeyboardButtonView.swift
 //  Wordle
 //
 //  Created by Екатерина Неделько on 28.04.22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseKeyboardButton: UIButton {
+class BaseKeyboardButtonView: UIButton {
     
     init() {
         super.init(frame: .zero)

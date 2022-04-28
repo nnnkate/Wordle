@@ -46,12 +46,12 @@ class KeyboardView: UIStackView {
             self.addArrangedSubview(stackView)
             
             for box in row {
-                let keyboardBoxView = KeyboardButtonView(keyboardButton: box)
+                let keyboardBoxView = CharacterKeyboardButtonView(keyboardButton: box)
                
                 stackView.addArrangedSubview(keyboardBoxView)
             }
             if index == keyboardLetters.count - 1 {
-                stackView.addArrangedSubview(DeleteButtonView())
+                stackView.addArrangedSubview(DeleteKeyboardButtonView())
             }
         }
     }

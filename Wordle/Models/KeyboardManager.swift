@@ -15,9 +15,6 @@ struct KeyboardManager {
             ["Z", "X", "C", "V", "B", "N", "M"]
         ]
         
-        self.keyboardLetters = letters.map { $0.map {
-            LetterBox(letter: $0)
-            }
-        }
+        self.keyboardLetters = letters.map { $0.map { LetterBox(letter: $0) } }
     }
 }

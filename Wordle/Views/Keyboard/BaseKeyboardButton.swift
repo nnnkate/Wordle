@@ -1,13 +1,13 @@
 //
-//  DeleteButtonView.swift
+//  BaseKeyboardButton.swift
 //  Wordle
 //
-//  Created by Екатерина Неделько on 26.04.22.
+//  Created by Екатерина Неделько on 28.04.22.
 //
 
 import UIKit
 
-class DeleteButtonView: UIButton {
+class BaseKeyboardButton: UIButton {
     
     init() {
         super.init(frame: .zero)
@@ -21,23 +21,15 @@ class DeleteButtonView: UIButton {
     
     // MARK: - Initial View Setup
     
-    private func setUpView() {
+    func setUpView() {
         updateView()
         
         setCornerRadius()
-        addConstrains()
-        
         addButtonTapAction()
     }
     
-    private func setCornerRadius() {
-        self.layer.cornerRadius = 4
-    }
-    
-    private func addConstrains() {
+    func addConstrains(multiplier: CGFloat) {
         self.translatesAutoresizingMaskIntoConstraints = false
-
-        let multiplier = 1.3
 
         NSLayoutConstraint.activate([
             self.widthAnchor.constraint(equalTo: self.heightAnchor, multiplier: multiplier)
@@ -50,18 +42,17 @@ class DeleteButtonView: UIButton {
         self.addTarget(self, action: #selector(handleButtonTap), for: .touchUpInside)
     }
     
-    @objc private func handleButtonTap() {
-        print("Delete")
+    @objc func handleButtonTap() {
+        print("Button \(self.titleLabel?.text ?? "Base")")
     }
     
     // MARK: - View Update
      
-    private func updateView() {
-        updateBackground()
+    func updateView() {
+        updateBackground(status: nil)
     }
 
-    private func updateBackground() {
-        self.setImage(UIImage(systemName: "delete.left.fill"), for: .normal)
+    func updateBackground(status: Evaluation?) {
         self.backgroundColor = .white
         self.tintColor = .darkGray
     }

@@ -1,5 +1,5 @@
 //
-//  KeyboardButtonView.swift
+//  CharacterKeyboardButton.swift
 //  Wordle
 //
 //  Created by Екатерина Неделько on 26.04.22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class KeyboardButtonView: UIButton {
+final class CharacterKeyboardButtonView: BaseKeyboardButton {
     private var keyboardButton: LetterBox! {
         didSet {
             updateView()
@@ -17,9 +17,7 @@ class KeyboardButtonView: UIButton {
     init(keyboardButton: LetterBox) {
         self.keyboardButton = keyboardButton
         
-        super.init(frame: .zero)
-        
-        setUpView()
+        super.init()
     }
     
     required init?(coder: NSCoder) {
@@ -28,41 +26,20 @@ class KeyboardButtonView: UIButton {
     
     // MARK: - Initial View Setup
     
-    private func setUpView() {
-        updateView()
+    override func setUpView() {
+        super.setUpView()
         
         setTitleFont()
-        setCornerRadius()
-        addConstrains()
-        
-        addButtonTapAction()
+        self.addConstrains(multiplier: 0.5)
     }
     
     private func setTitleFont() {
         self.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .bold)
     }
     
-    private func setCornerRadius() {
-        self.layer.cornerRadius = 4
-    }
-    
-    private func addConstrains() {
-        self.translatesAutoresizingMaskIntoConstraints = false
-
-        let multiplier = 0.5
-
-        NSLayoutConstraint.activate([
-            self.widthAnchor.constraint(equalTo: self.heightAnchor, multiplier: multiplier)
-        ])
-    }
-    
     // MARK: - Manipulation
     
-    private func addButtonTapAction() {
-        self.addTarget(self, action: #selector(handleButtonTap), for: .touchUpInside)
-    }
-    
-    @objc private func handleButtonTap() {
+    @objc override func handleButtonTap() {
         print(keyboardButton.letter)
     }
     
@@ -72,9 +49,10 @@ class KeyboardButtonView: UIButton {
         self.keyboardButton = keyboardButton
     }
      
-    private func updateView() {
+    override func updateView() {
+        super.updateView()
+        
         updateLabel(letter: keyboardButton.letter)
-        updateBackground(status: keyboardButton?.status)
     }
     
     private func updateLabel(letter: String) {
@@ -85,7 +63,7 @@ class KeyboardButtonView: UIButton {
         setTitle(text, for: .normal)
     }
 
-    private func updateBackground(status: Evaluation?) {
+    override func updateBackground(status: Evaluation?) {
         self.backgroundColor = status?.backgroundColor ?? .white
         self.setTitleColor(status?.fontColor ?? .darkGray, for: .normal)
     }

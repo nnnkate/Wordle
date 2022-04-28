@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DeleteKeyboardButtonView: BaseKeyboardButton {
+final class DeleteKeyboardButtonView: BaseKeyboardButton {
     
     override func setUpView() {
         super.setUpView()

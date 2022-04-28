@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8508796A281746800067408A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85087969281746800067408A /* UIView+Extension.swift */; };
 		858B982E281A44DC00A258D1 /* BaseKeyboardButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858B982D281A44DC00A258D1 /* BaseKeyboardButtonView.swift */; };
-		858B9830281A458600A258D1 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858B982F281A458600A258D1 /* UIButton+Extensions.swift */; };
 		85A25127281838F200BBEF73 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A25126281838F200BBEF73 /* KeyboardManager.swift */; };
 		85A2512928183FC500BBEF73 /* CharacterKeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A2512828183FC500BBEF73 /* CharacterKeyboardButton.swift */; };
 		85A2512B28183FD500BBEF73 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A2512A28183FD500BBEF73 /* KeyboardView.swift */; };
@@ -30,7 +29,6 @@
 /* Begin PBXFileReference section */
 		85087969281746800067408A /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		858B982D281A44DC00A258D1 /* BaseKeyboardButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseKeyboardButtonView.swift; sourceTree = "<group>"; };
-		858B982F281A458600A258D1 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		85A25126281838F200BBEF73 /* KeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		85A2512828183FC500BBEF73 /* CharacterKeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterKeyboardButton.swift; sourceTree = "<group>"; };
 		85A2512A28183FD500BBEF73 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
@@ -82,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				85087969281746800067408A /* UIView+Extension.swift */,
-				858B982F281A458600A258D1 /* UIButton+Extensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -248,7 +245,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				85C325532812ACAF002BFBF5 /* ViewController.swift in Sources */,
-				858B9830281A458600A258D1 /* UIButton+Extensions.swift in Sources */,
 				85A2512928183FC500BBEF73 /* CharacterKeyboardButton.swift in Sources */,
 				858B982E281A44DC00A258D1 /* BaseKeyboardButtonView.swift in Sources */,
 				85C3254F2812ACAF002BFBF5 /* AppDelegate.swift in Sources */,

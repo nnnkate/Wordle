@@ -17,7 +17,7 @@ struct GameManager {
     
     private let fileName = "AllowedWords"
     
-    init(lettersCount: Int, attemptsNumber: Int) {
+    init(lettersCount: Int = 5, attemptsNumber: Int = 5) {
         setLettersCount(lettersCount)
         setAttemptsNumber(attemptsNumber)
         
@@ -36,6 +36,14 @@ struct GameManager {
     
     mutating func setAttemptsNumber(_ attemptsNumber: Int) {
         self.attemptsNumber = attemptsNumber
+    }
+    
+    func getLettersCount() -> Int {
+        lettersCount
+    }
+    
+    func getAttemptsNumber()  -> Int {
+        attemptsNumber
     }
     
     // MARK: - Randow Word

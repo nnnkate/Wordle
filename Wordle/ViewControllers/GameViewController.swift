@@ -24,11 +24,11 @@ class GameViewController: UIViewController {
         checkWordButton.delegate = self
         
         keyboardContainer.delegate = self
-        keyboardContainer.updateKeyboardButtons(keyboardManager.keyboardLetters)
+        keyboardContainer.updateKeyboardButtons(keyboardManager.getKeyboardLetters())
     }
     
     private func addCells() {
-        for _ in 0..<gameManager.lettersCount {
+        for _ in 0..<gameManager.getLettersCount() {
             let lettersContainer = UIStackView()
             
             lettersContainer.axis = .horizontal
@@ -36,7 +36,7 @@ class GameViewController: UIViewController {
             lettersContainer.spacing = 5
             
             wordsContainer.addArrangedSubview(lettersContainer)
-            for _ in 0..<gameManager.attemptsNumber {
+            for _ in 0..<gameManager.getAttemptsNumber() {
                 let letterBoxView = LetterBoxView()
                 
                 letterBoxView.translatesAutoresizingMaskIntoConstraints = false

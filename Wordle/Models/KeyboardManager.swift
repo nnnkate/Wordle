@@ -17,4 +17,8 @@ struct KeyboardManager {
         
         self.keyboardLetters = letters.map { $0.map { LetterBox(letter: $0) } }
     }
+    
+    func getKeyboardLetters() ->[[LetterBox]] {
+        keyboardLetters
+    }
 }

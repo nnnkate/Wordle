@@ -25,6 +25,7 @@
 		85C3256C2812AEDF002BFBF5 /* Evaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C3256B2812AEDF002BFBF5 /* Evaluation.swift */; };
 		85CAD98D281B2B6C00E5737B /* KeyboardButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CAD98C281B2B6C00E5737B /* KeyboardButtonDelegate.swift */; };
 		85CAD993281B34CB00E5737B /* CheckWordButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CAD992281B34CB00E5737B /* CheckWordButtonView.swift */; };
+		85CAD995281BE23300E5737B /* AllowedWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 85CAD994281BE23300E5737B /* AllowedWords.txt */; };
 		85FD417F281447EE000191AD /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD417E281447EE000191AD /* GameManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		85C3256B2812AEDF002BFBF5 /* Evaluation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Evaluation.swift; sourceTree = "<group>"; };
 		85CAD98C281B2B6C00E5737B /* KeyboardButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButtonDelegate.swift; sourceTree = "<group>"; };
 		85CAD992281B34CB00E5737B /* CheckWordButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckWordButtonView.swift; sourceTree = "<group>"; };
+		85CAD994281BE23300E5737B /* AllowedWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AllowedWords.txt; sourceTree = "<group>"; };
 		85FD417E281447EE000191AD /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +136,7 @@
 		85C325632812ACC5002BFBF5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				85CAD994281BE23300E5737B /* AllowedWords.txt */,
 				85FD417E281447EE000191AD /* GameManager.swift */,
 				85A25126281838F200BBEF73 /* KeyboardManager.swift */,
 				850879672817034C0067408A /* Letter */,
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85C3255B2812ACB5002BFBF5 /* LaunchScreen.storyboard in Resources */,
+				85CAD995281BE23300E5737B /* AllowedWords.txt in Resources */,
 				85C325582812ACB5002BFBF5 /* Assets.xcassets in Resources */,
 				85C325662812AD33002BFBF5 /* LetterBoxView.xib in Resources */,
 				85C325562812ACAF002BFBF5 /* Main.storyboard in Resources */,

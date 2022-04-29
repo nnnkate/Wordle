@@ -62,7 +62,17 @@ extension GameViewController: KeyboardButtonDelegate {
    }
     
     func deleteButtonTap() {
-        print("remove last")
+        for row in wordsContainer.subviews {
+            if let letterContainer = row.subviews as? [LetterBoxView] {
+                for (index, value) in letterContainer.enumerated() {
+                    let previousIndex = index == 0 ? 0 : index - 1
+                    if value.letterBox == nil, previousIndex < letterContainer.count {
+                        letterContainer[previousIndex].updateLetterBox(letterBox: nil)
+                        return
+                    }
+                }
+            }
+        }
     }
     
     func checkWordButtonTap() {

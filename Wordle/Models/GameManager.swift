@@ -7,9 +7,8 @@
 import Foundation
 
 struct GameManager {
-    
-    let lettersCount: Int
-    let attemptsNumber: Int
+    private var lettersCount = 5
+    private var attemptsNumber = 5
     
     private var currentWord = ""
     private var allowedWords = Set<Substring>()
@@ -18,15 +17,25 @@ struct GameManager {
     
     private let fileName = "AllowedWords"
     
-    init(lettersCount: Int = 5, attemptsNumber: Int = 5) {
-        self.lettersCount = lettersCount
-        self.attemptsNumber = attemptsNumber
+    init(lettersCount: Int, attemptsNumber: Int) {
+        setLettersCount(lettersCount)
+        setAttemptsNumber(attemptsNumber)
         
         gameLetters = Array(repeating: Array(repeating: nil, count: lettersCount), count: attemptsNumber)
         
         fillAllowedWords()
         
         generateRandomWord()
+    }
+    
+    // MARK: - Game Settings
+    
+    mutating func setLettersCount(_ lettersCount: Int) {
+        self.lettersCount = lettersCount
+    }
+    
+    mutating func setAttemptsNumber(_ attemptsNumber: Int) {
+        self.attemptsNumber = attemptsNumber
     }
     
     // MARK: - Randow Word

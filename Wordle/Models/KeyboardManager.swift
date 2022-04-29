@@ -6,7 +6,7 @@
 //
 
 struct KeyboardManager {
-    let keyboardLetters: [[LetterBox]]
+    private let keyboardLetters: [[LetterBox]]
     
     init() {
         let letters = [

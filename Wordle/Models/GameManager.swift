@@ -11,7 +11,7 @@ struct GameManager {
     private var attemptsNumber = 5
     
     private var currentWord = ""
-    private var allowedWords = Set<Substring>()
+    private var allowedWords = Set<String>()
     
     private var gameLetters = [[LetterBox?]]()
     
@@ -68,10 +68,10 @@ struct GameManager {
         guard let allowedWordsArray = try? String(contentsOfFile: path, encoding: String.Encoding.utf8).split(separator: "\n") else {
             return }
         
-        self.allowedWords = Set(allowedWordsArray)
+        self.allowedWords = Set(allowedWordsArray.map { $0.uppercased() })
     }
     
-    func getAllowedWords() -> Set<Substring> {
+    func getAllowedWords() -> Set<String> {
         allowedWords
     }
     

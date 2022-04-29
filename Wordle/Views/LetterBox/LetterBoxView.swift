@@ -74,6 +74,12 @@ final class LetterBoxView: UIView {
         contentView.backgroundColor = status?.backgroundColor ?? .clear
     }
     
+    // MARK: - Get Conditions
+    
+    func getLetterBoxStatus() -> Evaluation? {
+        letterBox?.status
+    }
+    
 }
 
 extension Evaluation {

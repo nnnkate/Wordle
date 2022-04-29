@@ -28,15 +28,11 @@ class GameViewController: UIViewController {
     }
     
     private func addCells() {
-        for _ in 0..<gameManager.getLettersCount() {
-            let lettersContainer = UIStackView()
-            
-            lettersContainer.axis = .horizontal
-            lettersContainer.distribution = .fillEqually
-            lettersContainer.spacing = 5
+        for _ in 0..<gameManager.getAttemptsNumber() {
+            let lettersContainer = LetterBoxContainerView()
             
             wordsContainer.addArrangedSubview(lettersContainer)
-            for _ in 0..<gameManager.getAttemptsNumber() {
+            for _ in 0..<gameManager.getLettersCount() {
                 let letterBoxView = LetterBoxView()
                 
                 letterBoxView.translatesAutoresizingMaskIntoConstraints = false
@@ -62,11 +58,14 @@ extension GameViewController: KeyboardButtonDelegate {
    }
     
     func deleteButtonTap() {
-        for row in wordsContainer.subviews {
+        rowLoop: for row in wordsContainer.subviews {
             if let letterContainer = row.subviews as? [LetterBoxView] {
                 for (index, value) in letterContainer.enumerated() {
                     let previousIndex = index == 0 ? 0 : index - 1
                     if value.letterBox == nil, previousIndex < letterContainer.count {
+                        if letterContainer[previousIndex].getLetterBoxStatus() != nil {
+                            continue rowLoop
+                        }
                         letterContainer[previousIndex].updateLetterBox(letterBox: nil)
                         return
                     }
@@ -76,6 +75,30 @@ extension GameViewController: KeyboardButtonDelegate {
     }
     
     func checkWordButtonTap() {
-        print("check")
+        var rowChecked = false
+        var enteredWord = Word()
+        
+        for row in wordsContainer.subviews {
+            for cell in row.subviews {
+                guard let boxView = cell as? LetterBoxView, let letterBox = boxView.letterBox else {
+                    break
+                }
+                if boxView.getLetterBoxStatus() == nil {
+                    rowChecked = true
+                    
+                    enteredWord.append(letterBox)
+                }
+            }
+            if rowChecked {
+                break
+            }
+        }
+        
+        if enteredWord.count < gameManager.getLettersCount() {
+            print("not word, count error")
+            return
+        }
+        
+        print(enteredWord.isAllowed(in: gameManager))
     }
 }

@@ -53,10 +53,7 @@ extension GameViewController: KeyboardButtonDelegate {
     func characterButtonTap(_ letterBox: LetterBox) {
         for row in wordsContainer.subviews {
             for cell in row.subviews {
-                guard let boxView = cell as? LetterBoxView else {
-                    return
-                }
-                if boxView.letterBox == nil {
+               if let boxView = cell as? LetterBoxView, boxView.letterBox == nil {
                     boxView.updateLetterBox(letterBox: letterBox)
                     return
                 }

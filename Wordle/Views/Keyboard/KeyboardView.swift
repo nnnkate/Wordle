@@ -7,8 +7,10 @@
 
 import UIKit
 
-class KeyboardView: UIStackView {
+final class KeyboardView: UIStackView {
     var keyboardLetters: [[LetterBox]]
+    
+    weak var delegate: GameViewController?
     
     init(keyboardLetters: [[LetterBox]]) {
         self.keyboardLetters = keyboardLetters
@@ -40,18 +42,21 @@ class KeyboardView: UIStackView {
             let stackView = UIStackView()
             stackView.axis = .horizontal
             stackView.alignment = .fill
-            stackView.distribution = .fillProportionally
+            stackView.distribution = .fillEqually
             stackView.spacing = 5
             
             self.addArrangedSubview(stackView)
             
             for box in row {
-                let keyboardBoxView = CharacterKeyboardButtonView(keyboardButton: box)
-               
-                stackView.addArrangedSubview(keyboardBoxView)
+                let characterKeyboardBoxView = CharacterKeyboardButtonView(keyboardButton: box)
+                characterKeyboardBoxView.delegate = delegate
+                
+                stackView.addArrangedSubview(characterKeyboardBoxView)
             }
             if index == keyboardLetters.count - 1 {
-                stackView.addArrangedSubview(DeleteKeyboardButtonView())
+                let deleteKeyboardButtonView = DeleteKeyboardButtonView()
+                deleteKeyboardButtonView.delegate = delegate
+                stackView.addArrangedSubview(deleteKeyboardButtonView)
             }
         }
     }

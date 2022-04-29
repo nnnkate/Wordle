@@ -23,7 +23,7 @@
                     <constraints>
                         <constraint firstAttribute="width" secondItem="6xn-ll-DKf" secondAttribute="height" multiplier="1:1" id="ogo-ux-yOU"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="40"/>
+                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="30"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>

@@ -9,6 +9,8 @@ import UIKit
 
 class BaseKeyboardButtonView: UIButton {
     
+    weak var delegate: GameViewController?
+    
     init() {
         super.init(frame: .zero)
         
@@ -17,6 +19,8 @@ class BaseKeyboardButtonView: UIButton {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        
+        setUpView()
     }
     
     // MARK: - Initial View Setup
@@ -43,7 +47,7 @@ class BaseKeyboardButtonView: UIButton {
     }
     
     @objc func handleButtonTap() {
-        print("Button \(self.titleLabel?.text ?? "Base")")
+        delegate?.checkWordButtonTap()
     }
     
     // MARK: - View Update

@@ -7,12 +7,12 @@
 
 import UIKit
 
-class LetterBoxView: UIView {
+final class LetterBoxView: UIView {
 
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var letterLabel: UILabel!
     
-    private var letterBox: LetterBox? {
+    var letterBox: LetterBox? {
         didSet {
             updateView()
         }

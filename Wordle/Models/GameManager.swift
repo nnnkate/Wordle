@@ -5,7 +5,7 @@
 //  Created by Екатерина Неделько on 23.04.22.
 //
 
-class GameManager {
+final class GameManager {
     
     //temporary way
     let lettersCount = 5

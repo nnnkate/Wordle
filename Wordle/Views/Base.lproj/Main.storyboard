@@ -7,54 +7,76 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Wordle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="Wordle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Zxf-nY-Nmu">
-                                <rect key="frame" x="10" y="54" width="394" height="798"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="598-bn-D2b" userLabel="WordsView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="448"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="598-bn-D2b" userLabel="WordsView">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="389"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="odO-3v-W4u">
-                                                <rect key="frame" x="10" y="40" width="374" height="309"/>
-                                            </stackView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="odO-3v-W4u" firstAttribute="top" secondItem="598-bn-D2b" secondAttribute="top" constant="80" id="Ajb-ec-CpZ"/>
-                                            <constraint firstItem="odO-3v-W4u" firstAttribute="width" secondItem="598-bn-D2b" secondAttribute="width" id="ypR-f5-tXZ"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90H-zv-jYV" userLabel="KeyboardView">
-                                        <rect key="frame" x="0.0" y="409" width="394" height="389"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="W0c-yz-PGB" customClass="KeyboardView" customModule="Wordle" customModuleProvider="target">
-                                                <rect key="frame" x="-47" y="10" width="334" height="369"/>
-                                            </stackView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="W0c-yz-PGB" firstAttribute="width" secondItem="90H-zv-jYV" secondAttribute="width" id="LF0-wy-ZJd"/>
-                                            <constraint firstItem="W0c-yz-PGB" firstAttribute="bottom" secondItem="90H-zv-jYV" secondAttribute="bottom" constant="-80" id="cu9-aa-qhQ"/>
-                                        </constraints>
-                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="odO-3v-W4u">
+                                        <rect key="frame" x="41.5" y="45" width="331" height="358"/>
+                                    </stackView>
                                 </subviews>
-                            </stackView>
+                                <constraints>
+                                    <constraint firstItem="odO-3v-W4u" firstAttribute="height" secondItem="598-bn-D2b" secondAttribute="height" multiplier="0.8" id="4pF-m3-YNU"/>
+                                    <constraint firstItem="odO-3v-W4u" firstAttribute="centerX" secondItem="598-bn-D2b" secondAttribute="centerX" id="6UK-nX-HfQ"/>
+                                    <constraint firstItem="odO-3v-W4u" firstAttribute="centerY" secondItem="598-bn-D2b" secondAttribute="centerY" id="bA3-jK-JBa"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90H-zv-jYV" userLabel="KeyboardView">
+                                <rect key="frame" x="0.0" y="487" width="414" height="269"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="W0c-yz-PGB" customClass="KeyboardView" customModule="Wordle" customModuleProvider="target">
+                                        <rect key="frame" x="41.5" y="27" width="331" height="215"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="W0c-yz-PGB" firstAttribute="centerX" secondItem="90H-zv-jYV" secondAttribute="centerX" id="4lk-OH-zzF"/>
+                                    <constraint firstItem="W0c-yz-PGB" firstAttribute="height" secondItem="90H-zv-jYV" secondAttribute="height" multiplier="0.8" id="LF0-wy-ZJd"/>
+                                    <constraint firstItem="W0c-yz-PGB" firstAttribute="centerY" secondItem="90H-zv-jYV" secondAttribute="centerY" id="c8L-oH-qZb"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pCB-yd-8jc" userLabel="CheckWordView">
+                                <rect key="frame" x="0.0" y="751" width="414" height="89.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gf0-Cu-S7s" customClass="CheckWordButtonView" customModule="Wordle" customModuleProvider="target">
+                                        <rect key="frame" x="41.5" y="9" width="331" height="71.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Gf0-Cu-S7s" firstAttribute="centerY" secondItem="pCB-yd-8jc" secondAttribute="centerY" id="0mg-vS-zvn"/>
+                                    <constraint firstItem="Gf0-Cu-S7s" firstAttribute="height" secondItem="pCB-yd-8jc" secondAttribute="height" multiplier="0.8" id="P7x-bf-tmO"/>
+                                    <constraint firstItem="Gf0-Cu-S7s" firstAttribute="width" secondItem="pCB-yd-8jc" secondAttribute="width" multiplier="0.8" id="adg-6F-c0A"/>
+                                    <constraint firstItem="Gf0-Cu-S7s" firstAttribute="centerX" secondItem="pCB-yd-8jc" secondAttribute="centerX" id="zvh-9g-Tbk"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Zxf-nY-Nmu" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="4Sd-Uq-Vl4"/>
-                            <constraint firstItem="Zxf-nY-Nmu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="lTk-tF-OFn"/>
-                            <constraint firstItem="Zxf-nY-Nmu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="mM8-Sh-XHq"/>
-                            <constraint firstItem="Zxf-nY-Nmu" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wvB-RR-tIm"/>
+                            <constraint firstItem="598-bn-D2b" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="HO5-SH-abb"/>
+                            <constraint firstItem="90H-zv-jYV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="JoC-Vg-gVo"/>
+                            <constraint firstItem="90H-zv-jYV" firstAttribute="bottom" secondItem="pCB-yd-8jc" secondAttribute="top" constant="5" id="Jwp-Ck-mIq"/>
+                            <constraint firstItem="pCB-yd-8jc" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="O91-kC-V8O"/>
+                            <constraint firstItem="598-bn-D2b" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="PNC-vB-Jkx"/>
+                            <constraint firstItem="598-bn-D2b" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="WRy-C6-Rr2"/>
+                            <constraint firstItem="90H-zv-jYV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gdP-UF-Oq9"/>
+                            <constraint firstItem="598-bn-D2b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gx7-V9-w6z"/>
+                            <constraint firstItem="598-bn-D2b" firstAttribute="bottom" secondItem="90H-zv-jYV" secondAttribute="top" constant="5" id="j7j-h5-K7h"/>
+                            <constraint firstItem="pCB-yd-8jc" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="pyg-f7-8sF"/>
+                            <constraint firstItem="90H-zv-jYV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="tK8-yK-Jaa"/>
+                            <constraint firstItem="pCB-yd-8jc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zag-Hl-zMj"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="checkWordButton" destination="Gf0-Cu-S7s" id="BWn-eV-iGc"/>
                         <outlet property="keyboardContainer" destination="W0c-yz-PGB" id="hKO-Lt-5Dt"/>
                         <outlet property="wordsContainer" destination="odO-3v-W4u" id="gll-Nt-vgo"/>
                     </connections>

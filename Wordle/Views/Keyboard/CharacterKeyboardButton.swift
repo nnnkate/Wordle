@@ -40,7 +40,7 @@ final class CharacterKeyboardButtonView: BaseKeyboardButtonView {
     // MARK: - Manipulation
     
     @objc override func handleButtonTap() {
-        print(keyboardButton.letter)
+        delegate?.characterButtonTap(keyboardButton)
     }
     
     // MARK: - View Update

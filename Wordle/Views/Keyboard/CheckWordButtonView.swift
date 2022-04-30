@@ -9,8 +9,16 @@ import UIKit
 
 final class CheckWordButtonView: BaseKeyboardButtonView {
     
+    private var checkStatus: CheckButtonStatus = .inactive {
+        didSet {
+            updateBackground(status: nil)
+        }
+    }
+    
     override func setUpView() {
         super.setUpView()
+        
+        setTitleCharacteristics()
     }
     
     @objc override func handleButtonTap() {
@@ -18,9 +26,30 @@ final class CheckWordButtonView: BaseKeyboardButtonView {
     }
     
     override func updateBackground(status: Evaluation?) {
-        super.updateBackground(status: status)
-        //self.backgroundColor = .red
+        self.backgroundColor = checkStatus.backgroundColor
         
-        self.setImage(UIImage(systemName: "infinity"), for: .normal)
+        self.setTitle(checkStatus.title, for: .normal)
     }
+    
+    private func setTitleCharacteristics() {
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .bold)
+        self.tintColor = .white
+    }
+    
+    private func setCheckButtonStatus(_ checkStatus: CheckButtonStatus){
+        self.checkStatus = checkStatus
+    }
+    
+    func updateStatus(enteredWord: Word, in gameManager: GameManager) {
+        if enteredWord.count < gameManager.getLettersCount() {
+            self.setCheckButtonStatus(.inactive)
+        } else if enteredWord.notAllowed(in: gameManager) {
+            self.setCheckButtonStatus(.notAWord)
+        } else {
+            self.setCheckButtonStatus(.active)
+        }
+    }
+    
 }
+
+

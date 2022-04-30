@@ -9,7 +9,7 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-    @IBOutlet weak var wordsContainer: UIStackView!
+    @IBOutlet weak var wordContainer: WordContainerView!
     @IBOutlet weak var keyboardContainer: KeyboardView!
     @IBOutlet weak var checkWordButton: CheckWordButtonView!
     
@@ -31,7 +31,7 @@ class GameViewController: UIViewController {
         for _ in 0..<gameManager.getAttemptsNumber() {
             let lettersContainer = LetterBoxContainerView()
             
-            wordsContainer.addArrangedSubview(lettersContainer)
+            wordContainer.addArrangedSubview(lettersContainer)
             for _ in 0..<gameManager.getLettersCount() {
                 let letterBoxView = LetterBoxView()
                 
@@ -43,42 +43,11 @@ class GameViewController: UIViewController {
         }
     }
     
-}
-
-extension GameViewController: KeyboardButtonDelegate {
-    func characterButtonTap(_ letterBox: LetterBox) {
-        for row in wordsContainer.subviews {
-            for cell in row.subviews {
-               if let boxView = cell as? LetterBoxView, boxView.letterBox == nil {
-                    boxView.updateLetterBox(letterBox: letterBox)
-                    return
-                }
-            }
-        }
-   }
-    
-    func deleteButtonTap() {
-        rowLoop: for row in wordsContainer.subviews {
-            if let letterContainer = row.subviews as? [LetterBoxView] {
-                for (index, value) in letterContainer.enumerated() {
-                    let previousIndex = index == 0 ? 0 : index - 1
-                    if value.letterBox == nil, previousIndex < letterContainer.count {
-                        if letterContainer[previousIndex].getLetterBoxStatus() != nil {
-                            continue rowLoop
-                        }
-                        letterContainer[previousIndex].updateLetterBox(letterBox: nil)
-                        return
-                    }
-                }
-            }
-        }
-    }
-    
-    func checkWordButtonTap() {
-        var rowChecked = false
+    private func getEnteredWord() -> Word {
         var enteredWord = Word()
+        var rowChecked = false
         
-        for row in wordsContainer.subviews {
+        for row in wordContainer.subviews {
             for cell in row.subviews {
                 guard let boxView = cell as? LetterBoxView, let letterBox = boxView.letterBox else {
                     break
@@ -94,11 +63,66 @@ extension GameViewController: KeyboardButtonDelegate {
             }
         }
         
-        if enteredWord.count < gameManager.getLettersCount() {
-            print("not word, count error")
-            return
-        }
-        
-        print(enteredWord.isAllowed(in: gameManager))
+        return enteredWord
     }
 }
+
+extension GameViewController: KeyboardButtonDelegate {
+    func characterButtonTap(_ letterBox: LetterBox) {
+        var lastRowLetterBoxIsEmpty = false
+        
+        for row in wordContainer.subviews {
+            if let letterContainer = row.subviews as? [LetterBoxView] {
+                for (index, cell) in letterContainer.enumerated() {
+                    if cell.letterBox == nil {
+                        if lastRowLetterBoxIsEmpty {
+                            return
+                        }
+                        cell.updateLetterBox(letterBox: letterBox)
+                        checkWordButton.updateStatus(enteredWord: getEnteredWord(), in: gameManager)
+                        return
+                    }
+                    if cell.getLetterBoxStatus() == nil, index == letterContainer.count - 1 {
+                        lastRowLetterBoxIsEmpty = true
+                    }
+                }
+            }
+        }
+    }
+    
+    func deleteButtonTap() {
+        for row in wordContainer.subviews {
+            if let letterContainer = row.subviews as? [LetterBoxView] {
+                for (index, cell) in letterContainer.enumerated() {
+                    let nextIndex = index + 1
+                    if  nextIndex == letterContainer.count || letterContainer[nextIndex].letterBox == nil, cell.getLetterBoxStatus() == nil {
+                        cell.updateLetterBox(letterBox: nil)
+                        checkWordButton.updateStatus(enteredWord: getEnteredWord(), in: gameManager)
+                        return
+                    }
+                }
+            }
+        }
+    }
+    
+    func checkWordButtonTap() {
+        // test mode - not prepared !!!
+        for row in wordContainer.subviews {
+            if let letterContainer = row.subviews as? [LetterBoxView] {
+                for (index, cell) in letterContainer.enumerated() {
+                    if gameManager.getCurrentWord().contains(cell.getLetterBoxLetter()) {
+                        cell.letterBox?.status = .wrongLocation
+                        print(gameManager.getCurrentWord())
+                    } else {
+                        cell.letterBox?.status = .wrong
+                    }
+                }
+            }
+        }
+        
+        
+        checkWordButton.updateStatus(enteredWord: getEnteredWord(), in: gameManager)
+        //FILL STATUSES
+    }
+}
+

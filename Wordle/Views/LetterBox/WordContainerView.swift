@@ -1,13 +1,13 @@
 //
-//  LetterBoxContainerView.swift
+//  WordContainerView.swift
 //  Wordle
 //
-//  Created by Екатерина Неделько on 29.04.22.
+//  Created by Екатерина Неделько on 30.04.22.
 //
 
 import UIKit
 
-final class LetterBoxContainerView: UIStackView {
+final class WordContainerView: UIStackView {
     init() {
         super.init(frame: .zero)
         
@@ -19,14 +19,15 @@ final class LetterBoxContainerView: UIStackView {
     }
     
     private func setUpView() {
-        self.axis = .horizontal
+        self.axis = .vertical
         self.distribution = .fillEqually
         self.spacing = 5
     }
     
-    func addArrangedSubview(_ view: LetterBoxView) {
+    func addArrangedSubview(_ view: LetterBoxContainerView) {
         super.addArrangedSubview(view)
         
         // work whith gameManager -> gameLetters ???
     }
 }
+

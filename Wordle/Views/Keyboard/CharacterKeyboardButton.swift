@@ -34,7 +34,7 @@ final class CharacterKeyboardButtonView: BaseKeyboardButtonView {
     }
     
     private func setTitleFont() {
-        self.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .bold)
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
     }
     
     // MARK: - Manipulation
@@ -67,5 +67,4 @@ final class CharacterKeyboardButtonView: BaseKeyboardButtonView {
         self.backgroundColor = status?.backgroundColor ?? .white
         self.setTitleColor(status?.fontColor ?? .darkGray, for: .normal)
     }
-    
 }

@@ -13,7 +13,7 @@ struct LetterBox {
 }
 
 extension Word {
-    func isAllowed(in gameManager: GameManager) -> Bool {
-        gameManager.getAllowedWords().contains(self.reduce("") { $0 + $1.letter })
+    func notAllowed(in gameManager: GameManager) -> Bool {
+        !gameManager.getAllowedWords().contains(self.reduce("") { $0 + $1.letter })
     }
 }

@@ -62,12 +62,13 @@ final class LetterBoxView: UIView {
     }
      
     private func updateView() {
-        updateLabel(letter: letterBox?.letter)
+        updateLabel(letter: letterBox?.letter, status: letterBox?.status)
         updateBackground(status: letterBox?.status)
     }
 
-    private func updateLabel(letter: String?) {
+    private func updateLabel(letter: String?, status: Evaluation?) {
         letterLabel.text = letter?.uppercased()
+        letterLabel.textColor = status?.fontColor ?? .darkGray
     }
 
     private func updateBackground(status: Evaluation?) {
@@ -80,33 +81,8 @@ final class LetterBoxView: UIView {
         letterBox?.status
     }
     
-}
-
-extension Evaluation {
-    var backgroundColor: UIColor {
-        switch self {
-        case .wrong:
-            return .darkGray
-            
-        case .wrongLocation:
-            return .orange
-            
-        case .correct:
-            return .green
-        }
-    }
-    
-    var fontColor: UIColor {
-        .white
+    func getLetterBoxLetter() -> String {
+        letterBox?.letter ?? ""
     }
 }
 
-extension Optional where Wrapped == Evaluation {
-    var backgroundColor: UIColor {
-        self?.backgroundColor ?? .clear
-    }
-    
-    var fontColor: UIColor {
-        self?.backgroundColor ?? .darkGray
-    }
-}

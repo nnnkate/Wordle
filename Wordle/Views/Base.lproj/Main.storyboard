@@ -15,10 +15,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="598-bn-D2b" userLabel="WordsView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="598-bn-D2b" userLabel="WordView">
                                 <rect key="frame" x="0.0" y="44" width="414" height="448"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="odO-3v-W4u">
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="odO-3v-W4u" customClass="WordContainerView" customModule="Wordle" customModuleProvider="target">
                                         <rect key="frame" x="41.5" y="45" width="331" height="358"/>
                                     </stackView>
                                 </subviews>
@@ -78,7 +78,7 @@
                     <connections>
                         <outlet property="checkWordButton" destination="Gf0-Cu-S7s" id="BWn-eV-iGc"/>
                         <outlet property="keyboardContainer" destination="W0c-yz-PGB" id="hKO-Lt-5Dt"/>
-                        <outlet property="wordsContainer" destination="odO-3v-W4u" id="gll-Nt-vgo"/>
+                        <outlet property="wordContainer" destination="odO-3v-W4u" id="gll-Nt-vgo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

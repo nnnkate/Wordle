@@ -151,8 +151,8 @@
 		85C325632812ACC5002BFBF5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				85CAD9A72827B6E200E5737B /* Game */,
 				85CAD994281BE23300E5737B /* AllowedWords.txt */,
-				85FD417E281447EE000191AD /* GameManager.swift */,
 				85CAD99C281C820C00E5737B /* Keyboard */,
 				850879672817034C0067408A /* Letter */,
 			);
@@ -205,6 +205,14 @@
 				85CAD99D281C823200E5737B /* CheckButtonStatus.swift */,
 			);
 			path = Keyboard;
+			sourceTree = "<group>";
+		};
+		85CAD9A72827B6E200E5737B /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				85FD417E281447EE000191AD /* GameManager.swift */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 		85FD418028144B3C000191AD /* LetterBox */ = {

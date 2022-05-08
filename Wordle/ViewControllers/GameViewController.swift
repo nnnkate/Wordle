@@ -8,7 +8,6 @@
 import UIKit
 
 class GameViewController: UIViewController {
-    
     @IBOutlet weak var wordContainer: WordContainerView!
     @IBOutlet weak var keyboardContainer: KeyboardView!
     @IBOutlet weak var checkWordButton: CheckWordButtonView!
@@ -24,15 +23,15 @@ class GameViewController: UIViewController {
         checkWordButton.delegate = self
         
         keyboardContainer.delegate = self
-        keyboardContainer.updateKeyboardButtons(keyboardManager.getKeyboardLetters())
+        keyboardContainer.updateKeyboardButtons(keyboardManager.keyboardLetters)
     }
     
     private func addCells() {
-        for _ in 0..<gameManager.getAttemptsNumber() {
+        for _ in 0..<gameManager.attemptsCount {
             let lettersContainer = LetterBoxContainerView()
             
             wordContainer.addArrangedSubview(lettersContainer)
-            for _ in 0..<gameManager.getLettersCount() {
+            for _ in 0..<gameManager.lettersCount {
                 let letterBoxView = LetterBoxView()
                 
                 letterBoxView.translatesAutoresizingMaskIntoConstraints = false
@@ -106,23 +105,53 @@ extension GameViewController: KeyboardButtonDelegate {
     }
     
     func checkWordButtonTap() {
-        // test mode - not prepared !!!
-        for row in wordContainer.subviews {
-            if let letterContainer = row.subviews as? [LetterBoxView] {
-                for (index, cell) in letterContainer.enumerated() {
-                    if gameManager.getCurrentWord().contains(cell.getLetterBoxLetter()) {
-                        cell.letterBox?.status = .wrongLocation
-                        print(gameManager.getCurrentWord())
+        let currentWordLettersArray = Array(gameManager.currentWord)
+        print(currentWordLettersArray)
+        
+        for rowValue in wordContainer.subviews {
+            if let letterContainer = rowValue.subviews as? [LetterBoxView] {
+                for (cellIndex, cellValue) in letterContainer.enumerated() {
+                    if cellValue.getLetterBoxStatus() != nil {
+                        break
+                    }
+                        
+                    let cellLetter = cellValue.getLetterBoxLetter()
+                    if gameManager.currentWord.contains(cellLetter) {
+                        if String(currentWordLettersArray[cellIndex]) == cellLetter {
+                            cellValue.setLetterBoxStatus(.correct)
+                        } else {
+                            cellValue.setLetterBoxStatus(.wrongLocation)
+                        }
                     } else {
-                        cell.letterBox?.status = .wrong
+                        cellValue.setLetterBoxStatus(.wrong)
                     }
                 }
             }
         }
         
-        
         checkWordButton.updateStatus(enteredWord: getEnteredWord(), in: gameManager)
-        //FILL STATUSES
+        
+        setCheckResult()
+    }
+        
+    func updateWordContainer() {
+        for (rowIndex, rowValue) in wordContainer.subviews.enumerated() {
+            if let letterContainer = rowValue.subviews as? [LetterBoxView] {
+                for (cellIndex, cellValue) in letterContainer.enumerated() {
+                    cellValue.updateLetterBox(letterBox: gameManager.gameField[rowIndex][cellIndex])
+                }
+            }
+        }
+    }
+        
+    func setCheckResult() {
+        for (rowIndex, rowValue) in wordContainer.subviews.enumerated() {
+            if let letterContainer = rowValue.subviews as? [LetterBoxView] {
+                for (cellIndex, cellValue) in letterContainer.enumerated() {
+                    gameManager.setCellValue(rowIndex: rowIndex, cellIndex: cellIndex, value: cellValue.letterBox)
+                }
+            }
+        }
     }
 }
 

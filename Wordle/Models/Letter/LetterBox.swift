@@ -8,12 +8,20 @@
 typealias Word = [LetterBox]
 
 struct LetterBox {
-    var letter: String
-    var status: Evaluation?
+    private (set) var letter: String
+    private (set) var status: Evaluation?
+    
+    mutating func setLetter(_ letter: String) {
+        self.letter = letter
+    }
+    
+    mutating func setStatus(_ status: Evaluation) {
+        self.status = status
+    }
 }
 
 extension Word {
     func notAllowed(in gameManager: GameManager) -> Bool {
-        !gameManager.getAllowedWords().contains(self.reduce("") { $0 + $1.letter })
+        !gameManager.allowedWords.contains(self.reduce("") { $0 + $1.letter })
     }
 }

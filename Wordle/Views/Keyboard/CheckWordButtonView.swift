@@ -41,7 +41,7 @@ final class CheckWordButtonView: BaseKeyboardButtonView {
     }
     
     func updateStatus(enteredWord: Word, in gameManager: GameManager) {
-        if enteredWord.count < gameManager.getLettersCount() {
+        if enteredWord.count < gameManager.lettersCount {
             self.setCheckButtonStatus(.inactive)
         } else if enteredWord.notAllowed(in: gameManager) {
             self.setCheckButtonStatus(.notAWord)

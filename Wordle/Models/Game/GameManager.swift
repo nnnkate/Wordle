@@ -6,22 +6,22 @@
 //
 import Foundation
 
-struct GameManager {
-    private var lettersCount = 5
-    private var attemptsNumber = 5
+class GameManager {
+    private (set) var lettersCount = 5
+    private (set) var attemptsCount = 6
     
-    private var currentWord = ""
-    private var allowedWords = Set<String>()
+    private (set) var currentWord = ""
+    private (set) var allowedWords = Set<String>()
     
-    private var gameLetters = [[LetterBox?]]()
+    private (set) var gameField = [[LetterBox?]]()
     
     private let fileName = "AllowedWords"
     
-    init(lettersCount: Int = 5, attemptsNumber: Int = 5) {
+    init(lettersCount: Int = 5, attemptsCount: Int = 6) {
         setLettersCount(lettersCount)
-        setAttemptsNumber(attemptsNumber)
+        setAttemptsNumber(attemptsCount)
         
-        gameLetters = Array(repeating: Array(repeating: nil, count: lettersCount), count: attemptsNumber)
+        self.gameField = Array(repeating: Array(repeating: nil, count: lettersCount), count: attemptsCount)
         
         fillAllowedWords()
         
@@ -30,39 +30,27 @@ struct GameManager {
     
     // MARK: - Game Settings
     
-    mutating func setLettersCount(_ lettersCount: Int) {
+    func setLettersCount(_ lettersCount: Int) {
         self.lettersCount = lettersCount
     }
     
-    mutating func setAttemptsNumber(_ attemptsNumber: Int) {
-        self.attemptsNumber = attemptsNumber
-    }
-    
-    func getLettersCount() -> Int {
-        lettersCount
-    }
-    
-    func getAttemptsNumber()  -> Int {
-        attemptsNumber
+    func setAttemptsNumber(_ attemptsCount: Int) {
+        self.attemptsCount = attemptsCount
     }
     
     // MARK: - Randow Word
     
-    private mutating func generateRandomWord() {
+    private func generateRandomWord() {
         guard let randomWord = allowedWords.randomElement() else {
             return
         }
         
-        currentWord = randomWord.uppercased()
-    }
-    
-    func getCurrentWord() -> String {
-        currentWord
+        self.currentWord = randomWord.uppercased()
     }
     
     // MARK: - Allowed Words
     
-    private mutating func fillAllowedWords() {
+    private func fillAllowedWords() {
         let path = readFile()
         
         guard let allowedWordsArray = try? String(contentsOfFile: path, encoding: String.Encoding.utf8).split(separator: "\n") else {
@@ -70,11 +58,7 @@ struct GameManager {
         
         self.allowedWords = Set(allowedWordsArray.map { $0.uppercased() })
     }
-    
-    func getAllowedWords() -> Set<String> {
-        allowedWords
-    }
-    
+
     // MARK: - File Handing
     
     private func readFile() -> String {
@@ -83,5 +67,11 @@ struct GameManager {
         }
               
         return path
+    }
+    
+    // MARK: - Data processing
+    
+    func setCellValue(rowIndex: Int, cellIndex: Int, value: LetterBox?) {
+        gameField[rowIndex][cellIndex] = value
     }
 }

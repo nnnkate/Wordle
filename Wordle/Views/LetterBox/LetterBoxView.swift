@@ -12,7 +12,7 @@ final class LetterBoxView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var letterLabel: UILabel!
     
-    var letterBox: LetterBox? {
+    private (set) var letterBox: LetterBox? {
         didSet {
             updateView()
         }
@@ -75,7 +75,7 @@ final class LetterBoxView: UIView {
         contentView.backgroundColor = status?.backgroundColor ?? .clear
     }
     
-    // MARK: - Get Conditions
+    // MARK: - Get/Set Conditions
     
     func getLetterBoxStatus() -> Evaluation? {
         letterBox?.status
@@ -83,6 +83,10 @@ final class LetterBoxView: UIView {
     
     func getLetterBoxLetter() -> String {
         letterBox?.letter ?? ""
+    }
+    
+    func setLetterBoxStatus(_ status: Evaluation){
+        letterBox?.setStatus(status)
     }
 }
 

@@ -5,4 +5,8 @@
 //  Created by Екатерина Неделько on 8.05.22.
 //
 
-import Foundation
+enum GameStatus {
+    case win
+    case lost
+    case playing
+}

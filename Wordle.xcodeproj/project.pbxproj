@@ -32,6 +32,7 @@
 		85CAD99E281C823200E5737B /* CheckButtonStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CAD99D281C823200E5737B /* CheckButtonStatus.swift */; };
 		85CAD9A2281C88A200E5737B /* CheckButtonStatus+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CAD9A1281C88A200E5737B /* CheckButtonStatus+Extension.swift */; };
 		85CAD9A4281D17D100E5737B /* WordContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CAD9A3281D17D000E5737B /* WordContainerView.swift */; };
+		85CAD9A92827E55C00E5737B /* GameStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CAD9A82827E55C00E5737B /* GameStatus.swift */; };
 		85FD417F281447EE000191AD /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD417E281447EE000191AD /* GameManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		85CAD99D281C823200E5737B /* CheckButtonStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckButtonStatus.swift; sourceTree = "<group>"; };
 		85CAD9A1281C88A200E5737B /* CheckButtonStatus+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckButtonStatus+Extension.swift"; sourceTree = "<group>"; };
 		85CAD9A3281D17D000E5737B /* WordContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordContainerView.swift; sourceTree = "<group>"; };
+		85CAD9A82827E55C00E5737B /* GameStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatus.swift; sourceTree = "<group>"; };
 		85FD417E281447EE000191AD /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				85FD417E281447EE000191AD /* GameManager.swift */,
+				85CAD9A82827E55C00E5737B /* GameStatus.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				85CAD99E281C823200E5737B /* CheckButtonStatus.swift in Sources */,
 				85C3254F2812ACAF002BFBF5 /* AppDelegate.swift in Sources */,
 				8508796A281746800067408A /* UIView+Extension.swift in Sources */,
+				85CAD9A92827E55C00E5737B /* GameStatus.swift in Sources */,
 				85A2512B28183FD500BBEF73 /* KeyboardView.swift in Sources */,
 				85C325682812AD66002BFBF5 /* LetterBoxView.swift in Sources */,
 				85FD417F281447EE000191AD /* GameManager.swift in Sources */,

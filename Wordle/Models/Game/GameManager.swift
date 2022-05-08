@@ -17,6 +17,10 @@ class GameManager {
     
     private let fileName = "AllowedWords"
     
+    private (set) var gameStatus: GameStatus = .playing
+    
+    private var lastCheckedRow: Int?
+    
     init(lettersCount: Int = 5, attemptsCount: Int = 6) {
         setLettersCount(lettersCount)
         setAttemptsNumber(attemptsCount)
@@ -72,6 +76,26 @@ class GameManager {
     // MARK: - Data processing
     
     func setCellValue(rowIndex: Int, cellIndex: Int, value: LetterBox?) {
-        gameField[rowIndex][cellIndex] = value
+        if let value = value {
+            gameField[rowIndex][cellIndex] = value
+            lastCheckedRow = rowIndex
+        }
     }
+    
+    // MARK: - Game Result
+    
+    func checkGameStatus() {
+        gameField.forEach {
+            if $0.reduce(into: true, { if $1?.status != .correct { $0 = false } }) {
+                gameStatus = .win
+                return
+            }
+        }
+        
+        if let lastCheckedRow = lastCheckedRow, lastCheckedRow == attemptsCount - 1 {
+            gameStatus = .lost
+        }
+    }
+    
+    // TODO: - Check "this word has already been entered"
 }

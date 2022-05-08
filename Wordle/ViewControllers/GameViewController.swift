@@ -132,6 +132,20 @@ extension GameViewController: KeyboardButtonDelegate {
         checkWordButton.updateStatus(enteredWord: getEnteredWord(), in: gameManager)
         
         setCheckResult()
+        checkGameStatus()
+    }
+    
+    func checkGameStatus() {
+        gameManager.checkGameStatus()
+        
+        if gameManager.gameStatus == .win {
+            print("win")
+            return
+        }
+        if gameManager.gameStatus == .lost {
+            print("lost")
+            return
+        }
     }
         
     func updateWordContainer() {

@@ -22,7 +22,7 @@ final class CheckWordButtonView: BaseKeyboardButtonView {
     }
     
     @objc override func handleButtonTap() {
-        delegate?.checkWordButtonTap()
+        delegate?.handleButtonTap(type: .enter)
     }
     
     override func updateBackground(status: Evaluation?) {
@@ -40,7 +40,8 @@ final class CheckWordButtonView: BaseKeyboardButtonView {
         self.checkStatus = checkStatus
     }
     
-    func updateStatus(enteredWord: Word, in gameManager: GameManager) {
+    func updateStatus(gameManager: GameManager) {
+        let enteredWord: Word = gameManager.getEnteredWord()
         if enteredWord.count < gameManager.lettersCount {
             self.setCheckButtonStatus(.inactive)
         } else if enteredWord.notAllowed(in: gameManager) {

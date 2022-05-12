@@ -47,7 +47,7 @@ class BaseKeyboardButtonView: UIButton {
     }
     
     @objc func handleButtonTap() {
-        delegate?.checkWordButtonTap()
+        delegate?.handleButtonTap(type: .enter)
     }
     
     // MARK: - View Update

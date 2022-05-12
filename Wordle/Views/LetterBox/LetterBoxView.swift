@@ -18,7 +18,7 @@ final class LetterBoxView: UIView {
         }
     }
     
-    init(letterBox: LetterBox) {
+    init(letterBox: LetterBox?) {
         super.init(frame: .zero)
         
         self.letterBox = letterBox
@@ -73,20 +73,6 @@ final class LetterBoxView: UIView {
 
     private func updateBackground(status: Evaluation?) {
         contentView.backgroundColor = status?.backgroundColor ?? .clear
-    }
-    
-    // MARK: - Get/Set Conditions
-    
-    func getLetterBoxStatus() -> Evaluation? {
-        letterBox?.status
-    }
-    
-    func getLetterBoxLetter() -> String {
-        letterBox?.letter ?? ""
-    }
-    
-    func setLetterBoxStatus(_ status: Evaluation){
-        letterBox?.setStatus(status)
     }
 }
 

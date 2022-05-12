@@ -6,7 +6,5 @@
 //
 
 protocol KeyboardButtonDelegate {
-    func characterButtonTap(_ letterBox: LetterBox)
-    func deleteButtonTap()
-    func checkWordButtonTap()
+    func handleButtonTap(type keyboardButtonType: KeyboardButtonType)
 }

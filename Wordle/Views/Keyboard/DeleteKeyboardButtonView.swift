@@ -16,7 +16,7 @@ final class DeleteKeyboardButtonView: BaseKeyboardButtonView {
     }
     
     @objc override func handleButtonTap() {
-        delegate?.deleteButtonTap()
+        delegate?.handleButtonTap(type: .delete)
     }
     
     override func updateBackground(status: Evaluation?) {

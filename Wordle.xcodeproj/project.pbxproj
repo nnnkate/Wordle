@@ -13,6 +13,7 @@
 		85A2512928183FC500BBEF73 /* CharacterKeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A2512828183FC500BBEF73 /* CharacterKeyboardButton.swift */; };
 		85A2512B28183FD500BBEF73 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A2512A28183FD500BBEF73 /* KeyboardView.swift */; };
 		85A251312818714200BBEF73 /* DeleteKeyboardButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A251302818714200BBEF73 /* DeleteKeyboardButtonView.swift */; };
+		85B74CE9282DB4ED00F222A2 /* KeyboardButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B74CE8282DB4EC00F222A2 /* KeyboardButtonType.swift */; };
 		85C3254F2812ACAF002BFBF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C3254E2812ACAF002BFBF5 /* AppDelegate.swift */; };
 		85C325512812ACAF002BFBF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C325502812ACAF002BFBF5 /* SceneDelegate.swift */; };
 		85C325532812ACAF002BFBF5 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C325522812ACAF002BFBF5 /* GameViewController.swift */; };
@@ -26,12 +27,11 @@
 		85CAD98D281B2B6C00E5737B /* KeyboardButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CAD98C281B2B6C00E5737B /* KeyboardButtonDelegate.swift */; };
 		85CAD993281B34CB00E5737B /* CheckWordButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CAD992281B34CB00E5737B /* CheckWordButtonView.swift */; };
 		85CAD995281BE23300E5737B /* AllowedWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 85CAD994281BE23300E5737B /* AllowedWords.txt */; };
-		85CAD997281C538F00E5737B /* LetterBoxContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CAD996281C538E00E5737B /* LetterBoxContainerView.swift */; };
 		85CAD999281C6EEA00E5737B /* Evaluation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CAD998281C6EEA00E5737B /* Evaluation+Extension.swift */; };
 		85CAD99B281C6F2A00E5737B /* Optional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CAD99A281C6F2A00E5737B /* Optional+Extension.swift */; };
 		85CAD99E281C823200E5737B /* CheckButtonStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CAD99D281C823200E5737B /* CheckButtonStatus.swift */; };
 		85CAD9A2281C88A200E5737B /* CheckButtonStatus+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CAD9A1281C88A200E5737B /* CheckButtonStatus+Extension.swift */; };
-		85CAD9A4281D17D100E5737B /* WordContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CAD9A3281D17D000E5737B /* WordContainerView.swift */; };
+		85CAD9A4281D17D100E5737B /* WordsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CAD9A3281D17D000E5737B /* WordsContainerView.swift */; };
 		85CAD9A92827E55C00E5737B /* GameStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CAD9A82827E55C00E5737B /* GameStatus.swift */; };
 		85FD417F281447EE000191AD /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD417E281447EE000191AD /* GameManager.swift */; };
 /* End PBXBuildFile section */
@@ -43,6 +43,7 @@
 		85A2512828183FC500BBEF73 /* CharacterKeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterKeyboardButton.swift; sourceTree = "<group>"; };
 		85A2512A28183FD500BBEF73 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		85A251302818714200BBEF73 /* DeleteKeyboardButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteKeyboardButtonView.swift; sourceTree = "<group>"; };
+		85B74CE8282DB4EC00F222A2 /* KeyboardButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButtonType.swift; sourceTree = "<group>"; };
 		85C3254B2812ACAF002BFBF5 /* Wordle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C3254E2812ACAF002BFBF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85C325502812ACAF002BFBF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,12 +59,11 @@
 		85CAD98C281B2B6C00E5737B /* KeyboardButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButtonDelegate.swift; sourceTree = "<group>"; };
 		85CAD992281B34CB00E5737B /* CheckWordButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckWordButtonView.swift; sourceTree = "<group>"; };
 		85CAD994281BE23300E5737B /* AllowedWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AllowedWords.txt; sourceTree = "<group>"; };
-		85CAD996281C538E00E5737B /* LetterBoxContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterBoxContainerView.swift; sourceTree = "<group>"; };
 		85CAD998281C6EEA00E5737B /* Evaluation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Evaluation+Extension.swift"; sourceTree = "<group>"; };
 		85CAD99A281C6F2A00E5737B /* Optional+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extension.swift"; sourceTree = "<group>"; };
 		85CAD99D281C823200E5737B /* CheckButtonStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckButtonStatus.swift; sourceTree = "<group>"; };
 		85CAD9A1281C88A200E5737B /* CheckButtonStatus+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckButtonStatus+Extension.swift"; sourceTree = "<group>"; };
-		85CAD9A3281D17D000E5737B /* WordContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordContainerView.swift; sourceTree = "<group>"; };
+		85CAD9A3281D17D000E5737B /* WordsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsContainerView.swift; sourceTree = "<group>"; };
 		85CAD9A82827E55C00E5737B /* GameStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatus.swift; sourceTree = "<group>"; };
 		85FD417E281447EE000191AD /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				85CAD990281B338C00E5737B /* Delegates */,
-				85CAD98E281B2B7B00E5737B /* Protocols */,
 				85087968281746470067408A /* Extensions */,
 				85C325632812ACC5002BFBF5 /* Models */,
 				85C325622812ACBC002BFBF5 /* Views */,
@@ -169,21 +168,6 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		85CAD98E281B2B7B00E5737B /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				85CAD98F281B2B8800E5737B /* Keyboard */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		85CAD98F281B2B8800E5737B /* Keyboard */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Keyboard;
-			sourceTree = "<group>";
-		};
 		85CAD990281B338C00E5737B /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +187,7 @@
 		85CAD99C281C820C00E5737B /* Keyboard */ = {
 			isa = PBXGroup;
 			children = (
+				85B74CE8282DB4EC00F222A2 /* KeyboardButtonType.swift */,
 				85A25126281838F200BBEF73 /* KeyboardManager.swift */,
 				85CAD99D281C823200E5737B /* CheckButtonStatus.swift */,
 			);
@@ -221,8 +206,7 @@
 		85FD418028144B3C000191AD /* LetterBox */ = {
 			isa = PBXGroup;
 			children = (
-				85CAD9A3281D17D000E5737B /* WordContainerView.swift */,
-				85CAD996281C538E00E5737B /* LetterBoxContainerView.swift */,
+				85CAD9A3281D17D000E5737B /* WordsContainerView.swift */,
 				85C325672812AD66002BFBF5 /* LetterBoxView.swift */,
 				85C325652812AD33002BFBF5 /* LetterBoxView.xib */,
 			);
@@ -336,14 +320,14 @@
 				85FD417F281447EE000191AD /* GameManager.swift in Sources */,
 				85C3256C2812AEDF002BFBF5 /* Evaluation.swift in Sources */,
 				85A25127281838F200BBEF73 /* KeyboardManager.swift in Sources */,
+				85B74CE9282DB4ED00F222A2 /* KeyboardButtonType.swift in Sources */,
 				85CAD993281B34CB00E5737B /* CheckWordButtonView.swift in Sources */,
 				85C325512812ACAF002BFBF5 /* SceneDelegate.swift in Sources */,
 				85CAD98D281B2B6C00E5737B /* KeyboardButtonDelegate.swift in Sources */,
 				85CAD99B281C6F2A00E5737B /* Optional+Extension.swift in Sources */,
 				85C3256A2812AE70002BFBF5 /* LetterBox.swift in Sources */,
-				85CAD997281C538F00E5737B /* LetterBoxContainerView.swift in Sources */,
 				85CAD999281C6EEA00E5737B /* Evaluation+Extension.swift in Sources */,
-				85CAD9A4281D17D100E5737B /* WordContainerView.swift in Sources */,
+				85CAD9A4281D17D100E5737B /* WordsContainerView.swift in Sources */,
 				85A251312818714200BBEF73 /* DeleteKeyboardButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

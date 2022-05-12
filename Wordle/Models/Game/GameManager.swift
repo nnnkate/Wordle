@@ -7,6 +7,9 @@
 import Foundation
 
 class GameManager {
+    private var currentLetterIndexInRow = 0
+    private var currentAttemptIndex = 0
+    
     private (set) var lettersCount = 5
     private (set) var attemptsCount = 6
     
@@ -17,29 +20,23 @@ class GameManager {
     
     private let fileName = "AllowedWords"
     
-    private (set) var gameStatus: GameStatus = .playing
+    private (set) var gameStatus: GameStatus = .playing {
+        didSet {
+            checkGameStatus()
+        }
+    }
     
     private var lastCheckedRow: Int?
     
     init(lettersCount: Int = 5, attemptsCount: Int = 6) {
-        setLettersCount(lettersCount)
-        setAttemptsNumber(attemptsCount)
+        self.lettersCount = lettersCount
+        self.attemptsCount = attemptsCount
         
         self.gameField = Array(repeating: Array(repeating: nil, count: lettersCount), count: attemptsCount)
         
         fillAllowedWords()
         
         generateRandomWord()
-    }
-    
-    // MARK: - Game Settings
-    
-    func setLettersCount(_ lettersCount: Int) {
-        self.lettersCount = lettersCount
-    }
-    
-    func setAttemptsNumber(_ attemptsCount: Int) {
-        self.attemptsCount = attemptsCount
     }
     
     // MARK: - Randow Word
@@ -58,7 +55,8 @@ class GameManager {
         let path = readFile()
         
         guard let allowedWordsArray = try? String(contentsOfFile: path, encoding: String.Encoding.utf8).split(separator: "\n") else {
-            return }
+            return
+        }
         
         self.allowedWords = Set(allowedWordsArray.map { $0.uppercased() })
     }
@@ -85,17 +83,135 @@ class GameManager {
     // MARK: - Game Result
     
     func checkGameStatus() {
-        gameField.forEach {
-            if $0.reduce(into: true, { if $1?.status != .correct { $0 = false } }) {
-                gameStatus = .win
-                return
-            }
+        if gameStatus == .win {
+            print("win")
+            return
+        }
+        if gameStatus == .lost {
+            print("lost")
+            return
+        }
+    }
+    
+    // MARK: - Hahdle Button Tap
+    
+    func handleButtonTap(type keyboardButtonType: KeyboardButtonType) {
+        switch keyboardButtonType {
+        case .enter:
+            handleCheckWordButtonTap()
+        case .delete:
+            handleDeleteButtonTap()
+        case .character(let string):
+            handleCharacterButtonTap(string)
+        }
+    }
+    
+    private func handleCharacterButtonTap(_ letter: String) {
+        if currentLetterIndexInRow >= lettersCount {
+            return
         }
         
-        if let lastCheckedRow = lastCheckedRow, lastCheckedRow == attemptsCount - 1 {
+        gameField[currentAttemptIndex][currentLetterIndexInRow] =
+        LetterBox(letter: letter, status: nil)
+        
+        currentLetterIndexInRow += 1
+    }
+    
+    private func handleDeleteButtonTap() {
+        let previousLetterIndex = currentLetterIndexInRow - 1
+        
+        if previousLetterIndex < 0 {
+            return
+        }
+        
+        gameField[currentAttemptIndex][previousLetterIndex] = nil
+        
+        currentLetterIndexInRow = previousLetterIndex
+    }
+    
+    private func handleCheckWordButtonTap() {
+        if currentLetterIndexInRow < lettersCount ||
+            currentAttemptIndex >= attemptsCount {
+            return
+        }
+        
+        guard let enteredWord = getEnteredWord() else {
+            return
+        }
+        
+        let currentWordArray = Array(currentWord)
+        
+        // temporary (for test)
+        print(currentWordArray)
+        
+        for (index, letter) in enteredWord.enumerated() {
+            if letter == currentWordArray[index] {
+                gameField[currentAttemptIndex][index]?.setStatus(.correct)
+                
+                continue
+            }
+            
+            // TODO: Update the condition to take letters number in count
+            if currentWord.contains(letter) {
+                gameField[currentAttemptIndex][index]?.setStatus(.wrongLocation)
+                
+                continue
+            }
+            
+            gameField[currentAttemptIndex][index]?.setStatus(.wrong)
+        }
+        
+        if enteredWord == currentWord {
+            gameStatus = .win
+            
+            return
+        }
+        
+        currentAttemptIndex += 1
+        currentLetterIndexInRow = 0
+        
+        if currentAttemptIndex == attemptsCount {
             gameStatus = .lost
         }
     }
+    
+    private func getEnteredWord() -> String? {
+        let wordRow = gameField[currentAttemptIndex]
+        
+        var word = ""
+        
+        for letterBox in wordRow {
+            guard let letter = letterBox?.letter else {
+                return nil
+            }
+            
+            word += letter
+        }
+        
+        return word
+    }
+    
+    func getEnteredWord() -> Word {
+       var enteredWord = Word()
+       var rowChecked = false
+
+       for row in gameField {
+           for cell in row {
+               if let cell = cell {
+                   if cell.status == nil {
+                       rowChecked = true
+
+                       enteredWord.append(cell)
+                   }
+               }
+           }
+           if rowChecked {
+               break
+           }
+       }
+
+       return enteredWord
+   }
     
     // TODO: - Check "this word has already been entered"
 }

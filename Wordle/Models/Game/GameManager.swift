@@ -151,7 +151,6 @@ class GameManager {
                 continue
             }
             
-            // TODO: Update the condition to take letters number in count
             if currentWord.contains(letter) {
                 gameField[currentAttemptIndex][index]?.setStatus(.wrongLocation)
                 
@@ -212,6 +211,4 @@ class GameManager {
 
        return enteredWord
    }
-    
-    // TODO: - Check "this word has already been entered"
 }

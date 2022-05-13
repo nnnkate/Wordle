@@ -14,10 +14,17 @@
 		85A2512B28183FD500BBEF73 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A2512A28183FD500BBEF73 /* KeyboardView.swift */; };
 		85A251312818714200BBEF73 /* DeleteKeyboardButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A251302818714200BBEF73 /* DeleteKeyboardButtonView.swift */; };
 		85B74CE9282DB4ED00F222A2 /* KeyboardButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B74CE8282DB4EC00F222A2 /* KeyboardButtonType.swift */; };
+		85B74CEB282EB12D00F222A2 /* MainMenuStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85B74CEA282EB12D00F222A2 /* MainMenuStoryboard.storyboard */; };
+		85B74CEE282EB20000F222A2 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B74CED282EB20000F222A2 /* MainMenuViewController.swift */; };
+		85B74CF0282EBEFD00F222A2 /* SettingsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85B74CEF282EBEFD00F222A2 /* SettingsStoryboard.storyboard */; };
+		85B74CF2282EBF7E00F222A2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B74CF1282EBF7E00F222A2 /* SettingsViewController.swift */; };
+		85B74CF4282EC0D300F222A2 /* MainMenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B74CF3282EC0D300F222A2 /* MainMenuButtonView.swift */; };
+		85B74CF8282ECA0400F222A2 /* ProgressStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85B74CF7282ECA0400F222A2 /* ProgressStoryboard.storyboard */; };
+		85B74CFA282ECA4200F222A2 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B74CF9282ECA4200F222A2 /* ProgressViewController.swift */; };
 		85C3254F2812ACAF002BFBF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C3254E2812ACAF002BFBF5 /* AppDelegate.swift */; };
 		85C325512812ACAF002BFBF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C325502812ACAF002BFBF5 /* SceneDelegate.swift */; };
 		85C325532812ACAF002BFBF5 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C325522812ACAF002BFBF5 /* GameViewController.swift */; };
-		85C325562812ACAF002BFBF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85C325542812ACAF002BFBF5 /* Main.storyboard */; };
+		85C325562812ACAF002BFBF5 /* GameStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85C325542812ACAF002BFBF5 /* GameStoryboard.storyboard */; };
 		85C325582812ACB5002BFBF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85C325572812ACB5002BFBF5 /* Assets.xcassets */; };
 		85C3255B2812ACB5002BFBF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85C325592812ACB5002BFBF5 /* LaunchScreen.storyboard */; };
 		85C325662812AD33002BFBF5 /* LetterBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85C325652812AD33002BFBF5 /* LetterBoxView.xib */; };
@@ -44,11 +51,18 @@
 		85A2512A28183FD500BBEF73 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		85A251302818714200BBEF73 /* DeleteKeyboardButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteKeyboardButtonView.swift; sourceTree = "<group>"; };
 		85B74CE8282DB4EC00F222A2 /* KeyboardButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButtonType.swift; sourceTree = "<group>"; };
+		85B74CEA282EB12D00F222A2 /* MainMenuStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainMenuStoryboard.storyboard; sourceTree = "<group>"; };
+		85B74CED282EB20000F222A2 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		85B74CEF282EBEFD00F222A2 /* SettingsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsStoryboard.storyboard; sourceTree = "<group>"; };
+		85B74CF1282EBF7E00F222A2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		85B74CF3282EC0D300F222A2 /* MainMenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuButtonView.swift; sourceTree = "<group>"; };
+		85B74CF7282ECA0400F222A2 /* ProgressStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProgressStoryboard.storyboard; sourceTree = "<group>"; };
+		85B74CF9282ECA4200F222A2 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		85C3254B2812ACAF002BFBF5 /* Wordle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C3254E2812ACAF002BFBF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85C325502812ACAF002BFBF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		85C325522812ACAF002BFBF5 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		85C325552812ACAF002BFBF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		85C325552812ACAF002BFBF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GameStoryboard.storyboard; sourceTree = "<group>"; };
 		85C325572812ACB5002BFBF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85C3255A2812ACB5002BFBF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85C3255C2812ACB5002BFBF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -107,6 +121,15 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		85B74CF5282EC0DA00F222A2 /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				85B74CEA282EB12D00F222A2 /* MainMenuStoryboard.storyboard */,
+				85B74CF3282EC0D300F222A2 /* MainMenuButtonView.swift */,
+			);
+			path = MainMenu;
+			sourceTree = "<group>";
+		};
 		85C325422812ACAE002BFBF5 = {
 			isa = PBXGroup;
 			children = (
@@ -142,9 +165,12 @@
 		85C325622812ACBC002BFBF5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				85C325542812ACAF002BFBF5 /* GameStoryboard.storyboard */,
+				85B74CEF282EBEFD00F222A2 /* SettingsStoryboard.storyboard */,
+				85B74CF7282ECA0400F222A2 /* ProgressStoryboard.storyboard */,
+				85B74CF5282EC0DA00F222A2 /* MainMenu */,
 				85FD4182281454A0000191AD /* Keyboard */,
 				85FD418028144B3C000191AD /* LetterBox */,
-				85C325542812ACAF002BFBF5 /* Main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -164,6 +190,9 @@
 			isa = PBXGroup;
 			children = (
 				85C325522812ACAF002BFBF5 /* GameViewController.swift */,
+				85B74CED282EB20000F222A2 /* MainMenuViewController.swift */,
+				85B74CF1282EBF7E00F222A2 /* SettingsViewController.swift */,
+				85B74CF9282ECA4200F222A2 /* ProgressViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -294,9 +323,12 @@
 			files = (
 				85C3255B2812ACB5002BFBF5 /* LaunchScreen.storyboard in Resources */,
 				85CAD995281BE23300E5737B /* AllowedWords.txt in Resources */,
+				85B74CF8282ECA0400F222A2 /* ProgressStoryboard.storyboard in Resources */,
+				85B74CEB282EB12D00F222A2 /* MainMenuStoryboard.storyboard in Resources */,
 				85C325582812ACB5002BFBF5 /* Assets.xcassets in Resources */,
 				85C325662812AD33002BFBF5 /* LetterBoxView.xib in Resources */,
-				85C325562812ACAF002BFBF5 /* Main.storyboard in Resources */,
+				85C325562812ACAF002BFBF5 /* GameStoryboard.storyboard in Resources */,
+				85B74CF0282EBEFD00F222A2 /* SettingsStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,10 +350,13 @@
 				85A2512B28183FD500BBEF73 /* KeyboardView.swift in Sources */,
 				85C325682812AD66002BFBF5 /* LetterBoxView.swift in Sources */,
 				85FD417F281447EE000191AD /* GameManager.swift in Sources */,
+				85B74CF4282EC0D300F222A2 /* MainMenuButtonView.swift in Sources */,
+				85B74CEE282EB20000F222A2 /* MainMenuViewController.swift in Sources */,
 				85C3256C2812AEDF002BFBF5 /* Evaluation.swift in Sources */,
 				85A25127281838F200BBEF73 /* KeyboardManager.swift in Sources */,
 				85B74CE9282DB4ED00F222A2 /* KeyboardButtonType.swift in Sources */,
 				85CAD993281B34CB00E5737B /* CheckWordButtonView.swift in Sources */,
+				85B74CFA282ECA4200F222A2 /* ProgressViewController.swift in Sources */,
 				85C325512812ACAF002BFBF5 /* SceneDelegate.swift in Sources */,
 				85CAD98D281B2B6C00E5737B /* KeyboardButtonDelegate.swift in Sources */,
 				85CAD99B281C6F2A00E5737B /* Optional+Extension.swift in Sources */,
@@ -329,18 +364,19 @@
 				85CAD999281C6EEA00E5737B /* Evaluation+Extension.swift in Sources */,
 				85CAD9A4281D17D100E5737B /* WordsContainerView.swift in Sources */,
 				85A251312818714200BBEF73 /* DeleteKeyboardButtonView.swift in Sources */,
+				85B74CF2282EBF7E00F222A2 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		85C325542812ACAF002BFBF5 /* Main.storyboard */ = {
+		85C325542812ACAF002BFBF5 /* GameStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				85C325552812ACAF002BFBF5 /* Base */,
 			);
-			name = Main.storyboard;
+			name = GameStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 		85C325592812ACB5002BFBF5 /* LaunchScreen.storyboard */ = {
@@ -480,7 +516,7 @@
 				INFOPLIST_FILE = Wordle/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = MainMenuStoryboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
@@ -509,7 +545,7 @@
 				INFOPLIST_FILE = Wordle/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = MainMenuStoryboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;

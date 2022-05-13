@@ -23,7 +23,7 @@ class GameViewController: UIViewController {
         checkWordButton.delegate = self
         
         keyboardContainer.delegate = self
-        keyboardContainer.updateKeyboardButtons(keyboardManager.keyboardLetters)
+        keyboardContainer.fillKeyboardButtons(keyboardManager.keyboardLetters)
     }
 }
 
@@ -32,6 +32,10 @@ extension GameViewController: KeyboardButtonDelegate {
         gameManager.handleButtonTap(type: keyboardButtonType)
         
         wordsContainer.updateGameField(gameManager.gameField)
+        
+        if keyboardButtonType == .enter {
+            keyboardContainer.updateKeyboardButtons(gameManager.gameField)
+        }
         
         checkWordButton.updateStatus(gameManager: gameManager)
     }

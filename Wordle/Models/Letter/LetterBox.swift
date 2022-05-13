@@ -7,7 +7,7 @@
 
 typealias Word = [LetterBox]
 
-struct LetterBox {
+struct LetterBox: Hashable {
     private (set) var letter: String
     private (set) var status: Evaluation?
     

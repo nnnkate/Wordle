@@ -12,6 +12,8 @@ final class KeyboardView: UIStackView {
     
     weak var delegate: GameViewController?
     
+    private var buttonsContainer = [[CharacterKeyboardButtonView]]()
+    
     init(keyboardLetters: [[LetterBox]]) {
         self.keyboardLetters = keyboardLetters
         
@@ -47,11 +49,15 @@ final class KeyboardView: UIStackView {
             
             self.addArrangedSubview(stackView)
             
+            buttonsContainer.append([CharacterKeyboardButtonView]())
+            
             for box in row {
                 let characterKeyboardBoxView = CharacterKeyboardButtonView(keyboardButton: box)
                 characterKeyboardBoxView.delegate = delegate
                 
                 stackView.addArrangedSubview(characterKeyboardBoxView)
+                
+                buttonsContainer[index].append(characterKeyboardBoxView)
             }
             if index == keyboardLetters.count - 1 {
                 let deleteKeyboardButtonView = DeleteKeyboardButtonView()
@@ -61,9 +67,29 @@ final class KeyboardView: UIStackView {
         }
     }
     
-    func updateKeyboardButtons(_ keyboardLetters: [[LetterBox]]) {
+    func fillKeyboardButtons(_ keyboardLetters: [[LetterBox]]) {
         self.keyboardLetters = keyboardLetters
         
         createKeyboard()
+    }
+    
+    func updateKeyboardButtons(_ gameField: [[LetterBox?]]) {
+        
+        let flatGameField = gameField.flatMap { $0 }
+        
+        let lettersStastuses = flatGameField.reduce(into: [String: Evaluation]()) { partialResult, element in
+            guard let element = element else {
+                return
+            }
+            
+            partialResult[element.letter,  default: Evaluation.wrong] = ( partialResult[element.letter] == Evaluation.correct ? Evaluation.correct : element.status ?? .wrong)
+        }
+        
+      for (rowIndex, row) in keyboardLetters.enumerated() {
+            for (letterIndex, var letterBox) in row.enumerated() {
+                letterBox.setStatus(lettersStastuses[letterBox.letter] ?? .wrong)
+                buttonsContainer[rowIndex][letterIndex].updateBackground(status: lettersStastuses[letterBox.letter])
+            }
+        }
     }
 }

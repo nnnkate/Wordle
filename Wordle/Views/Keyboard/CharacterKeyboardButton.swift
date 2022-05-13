@@ -53,6 +53,7 @@ final class CharacterKeyboardButtonView: BaseKeyboardButtonView {
         super.updateView()
         
         updateLabel(letter: keyboardButton.letter)
+        updateBackground(status: keyboardButton.status)
     }
     
     private func updateLabel(letter: String) {

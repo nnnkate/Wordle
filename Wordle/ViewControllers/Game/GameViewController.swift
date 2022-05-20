@@ -64,10 +64,6 @@ extension GameViewController: GameDelegate {
             self.navigationController?.popViewController(animated: true)
         }
         
-        alertController.addTextField { textField in
-            textField.placeholder = "User name"
-        }
-        
         alertController.addAction(restartGameAction)
         alertController.addAction(dismissAction)
         alertController.addAction(backToMainMenuAction)

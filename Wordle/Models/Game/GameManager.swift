@@ -20,7 +20,7 @@ class GameManager {
     
     private let fileName = "AllowedWords"
     
-    var delegate: GameDelegate?
+    weak var delegate: GameDelegate?
     
     private var timer = Timer()
     private var timerCounter = 0
@@ -226,7 +226,7 @@ class GameManager {
     private func updateLeadersBoard() {
         var leadersBoardArray = UserDefaultsService.shared.decodeObject(type: [[String: GameResult]].self, for: .leadersBoard) ?? [[String: GameResult]]()
         
-        leadersBoardArray.append([userName: GameResult(timerCounter: timerCounter, attemptCount: attemptsCount)])
+        leadersBoardArray.append([userName: GameResult(timerCounter: timerCounter, attemptCount: attemptsCount + 1)])
         UserDefaultsService.shared.encodeObject(leadersBoardArray.self, for: .leadersBoard)
     }
     

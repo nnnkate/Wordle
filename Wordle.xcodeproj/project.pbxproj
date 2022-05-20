@@ -129,6 +129,14 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		855D33E2283BF32E00C2D895 /* GameResult */ = {
+			isa = PBXGroup;
+			children = (
+				85333B6428382F1E00F41F73 /* GameResult.swift */,
+			);
+			path = GameResult;
+			sourceTree = "<group>";
+		};
 		85B74CF5282EC0DA00F222A2 /* MainMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +277,7 @@
 		85C325632812ACC5002BFBF5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				855D33E2283BF32E00C2D895 /* GameResult */,
 				85CAD9A72827B6E200E5737B /* Game */,
 				85CAD99C281C820C00E5737B /* Keyboard */,
 				850879672817034C0067408A /* Letter */,
@@ -318,7 +327,6 @@
 			isa = PBXGroup;
 			children = (
 				85FD417E281447EE000191AD /* GameManager.swift */,
-				85333B6428382F1E00F41F73 /* GameResult.swift */,
 				85CAD9A82827E55C00E5737B /* GameStatus.swift */,
 			);
 			path = Game;

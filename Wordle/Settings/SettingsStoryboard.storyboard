@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="m3s-NK-ano">
-                                <rect key="frame" x="20" y="483" width="374" height="179"/>
+                                <rect key="frame" x="20" y="24" width="374" height="179"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HnM-s2-4S6">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="132"/>
@@ -47,6 +47,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sky-9u-Q3o" userLabel="User Name">
                                                 <rect key="frame" x="192" y="0.0" width="182" height="47"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="30"/>
                                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                                                 <connections>
@@ -61,9 +62,9 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.86497670410000005" green="0.56224310399999999" blue="0.71765881779999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="top" secondItem="m3s-NK-ano" secondAttribute="top" constant="20" id="Cdc-yv-N01"/>
                             <constraint firstItem="m3s-NK-ano" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="MS2-gJ-eqa"/>
                             <constraint firstItem="m3s-NK-ano" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.2" id="Wvm-rQ-Xc6"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="m3s-NK-ano" secondAttribute="bottom" constant="200" id="lUb-3B-51Q"/>
                             <constraint firstItem="m3s-NK-ano" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="mXi-sV-yHJ"/>
                         </constraints>
                     </view>

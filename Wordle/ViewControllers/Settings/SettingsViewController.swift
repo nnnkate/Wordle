@@ -17,6 +17,11 @@ class SettingsViewController: UIViewController {
         updateSettings()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
     @IBAction func handleHardModeSwitch(_ sender: UISwitch) {
         UserDefaultsService.shared.encodeObject(sender.isOn, for: .hardMode)
     }

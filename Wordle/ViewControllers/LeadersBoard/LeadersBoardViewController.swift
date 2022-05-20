@@ -12,6 +12,6 @@ class LeadersBoardViewController: UIViewController {
         super.viewDidLoad()
 
         // temporary (for test)
-        print(UserDefaultsService.shared.decodeObject(type: [[String: Int]].self, for: .leadersBoard) ?? [])
+        print(UserDefaultsService.shared.decodeObject(type: [[String: GameResult]].self, for: .leadersBoard) ?? [[String: GameResult]]())
     }
 }

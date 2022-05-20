@@ -10,8 +10,8 @@ class GameManager {
     private var currentLetterIndexInRow = 0
     private var currentAttemptIndex = 0
     
-    private (set) var lettersCount: Int
-    private (set) var attemptsCount: Int
+    private (set) var lettersCount = 5
+    private (set) var attemptsCount = 5
     
     private (set) var currentWord = ""
     private (set) var allowedWords = Set<String>()
@@ -31,11 +31,14 @@ class GameManager {
         }
     }
     
+    private let userName = UserDefaultsService.shared.decodeObject(type: String.self, for: .userName) ?? "User"
+    
     private var lastCheckedRow: Int?
     
-    init(lettersCount: Int = 5, attemptsCount: Int = 6) {
-        self.lettersCount = lettersCount
-        self.attemptsCount = attemptsCount
+    init() {
+        if UserDefaultsService.shared.decodeObject(type: Bool.self, for: .hardMode) ?? false {
+            self.attemptsCount += 1
+        }
         
         self.gameField = Array(repeating: Array(repeating: nil, count: lettersCount), count: attemptsCount)
         
@@ -215,8 +218,16 @@ class GameManager {
     func checkGameStatus() {
         if gameStatus != .playing {
             cancelTimer()
+            updateLeadersBoard()
             delegate?.handleGameEnd(gameStatus)
         }
+    }
+    
+    private func updateLeadersBoard() {
+        var leadersBoardArray = UserDefaultsService.shared.decodeObject(type: [[String: GameResult]].self, for: .leadersBoard) ?? [[String: GameResult]]()
+        
+        leadersBoardArray.append([userName: GameResult(timerCounter: timerCounter, attemptCount: attemptsCount)])
+        UserDefaultsService.shared.encodeObject(leadersBoardArray.self, for: .leadersBoard)
     }
     
     // MARK: -Timer

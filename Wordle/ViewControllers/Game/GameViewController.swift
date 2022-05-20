@@ -12,7 +12,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var keyboardContainer: KeyboardView!
     @IBOutlet weak var checkWordButton: CheckWordButtonView!
     
-    private let gameManager = GameManager()
+    private var gameManager = GameManager()
     private let keyboardManager = KeyboardManager()
     
     override func viewDidLoad() {
@@ -21,9 +21,7 @@ class GameViewController: UIViewController {
         wordsContainer.updateGameField(gameManager.gameField)
         
         checkWordButton.delegate = self
-        
         keyboardContainer.delegate = self
-        
         gameManager.delegate = self
         
         keyboardContainer.fillKeyboardButtons(keyboardManager.keyboardLetters)
@@ -51,7 +49,7 @@ extension GameViewController: GameDelegate {
     }
     
     private func showAlert(title: String, message: String) {
-        let allertController = UIAlertController(title: title,
+        let alertController = UIAlertController(title: title,
                                                  message: message,
                                                  preferredStyle: .alert)
         
@@ -65,11 +63,15 @@ extension GameViewController: GameDelegate {
             self.navigationController?.popViewController(animated: true)
         }
         
-        allertController.addAction(restartGameAction)
-        allertController.addAction(dismissAction)
-        allertController.addAction(backToMainMenuAction)
+        alertController.addTextField { textField in
+            textField.placeholder = "User name"
+        }
         
-        present(allertController, animated: true)
+        alertController.addAction(restartGameAction)
+        alertController.addAction(dismissAction)
+        alertController.addAction(backToMainMenuAction)
+        
+        present(alertController, animated: true)
     }
     
     private func restartGame() {
@@ -77,7 +79,6 @@ extension GameViewController: GameDelegate {
         
         wordsContainer.updateGameField(gameManager.gameField)
         keyboardContainer.updateKeyboardButtons(gameManager.gameField)
-        //checkWordButton.updateStatus(gameManager: gameManager)
     }
 }
 

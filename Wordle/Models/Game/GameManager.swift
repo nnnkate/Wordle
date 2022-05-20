@@ -119,7 +119,8 @@ class GameManager {
     
     private func handleCheckWordButtonTap() {
         if currentLetterIndexInRow < lettersCount ||
-            currentAttemptIndex >= attemptsCount {
+            currentAttemptIndex >= attemptsCount ||
+            gameStatus != .playing {
             return
         }
         
@@ -227,3 +228,4 @@ class GameManager {
         lastCheckedRow = nil
     }
 }
+

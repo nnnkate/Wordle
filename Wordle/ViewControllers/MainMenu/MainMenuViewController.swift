@@ -11,7 +11,6 @@ class MainMenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     @IBAction func handleGameButtonTap(_ sender: Any) {
@@ -21,10 +20,10 @@ class MainMenuViewController: UIViewController {
         }
     }
     
-    @IBAction func handleProgressButtonTap(_ sender: Any) {
-        if let progressViewContoller = UIStoryboard(name: "ProgressStoryboard", bundle: nil)
-            .instantiateViewController(withIdentifier: "progressVC") as? ProgressViewController {
-            navigationController?.pushViewController(progressViewContoller, animated: true)
+    @IBAction func handleLeadersBoarViewContollerButtonTap(_ sender: Any) {
+        if let leadersBoardViewContoller = UIStoryboard(name: "LeadersBoardStoryboard", bundle: nil)
+            .instantiateViewController(withIdentifier: "leadersBoardVC") as? LeadersBoardViewController {
+            navigationController?.pushViewController(leadersBoardViewContoller, animated: true)
         }
     }
     

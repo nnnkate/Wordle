@@ -16,23 +16,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="m3s-NK-ano">
-                                <rect key="frame" x="20" y="572.5" width="374" height="89.5"/>
+                                <rect key="frame" x="20" y="483" width="374" height="179"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HnM-s2-4S6">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="89.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="132"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hard mode:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7w7-zC-4xG">
-                                                <rect key="frame" x="0.0" y="17.5" width="193.5" height="54"/>
-                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="38"/>
+                                                <rect key="frame" x="0.0" y="42.5" width="168" height="47"/>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="33"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uH0-Cl-UE5">
-                                                <rect key="frame" x="325" y="29" width="51" height="31"/>
+                                                <rect key="frame" x="325" y="50.5" width="51" height="31"/>
                                                 <connections>
                                                     <action selector="handleHardModeSwitch:" destination="Y6W-OH-hqX" eventType="valueChanged" id="Nrn-bK-kzB"/>
                                                 </connections>
                                             </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mhC-6X-lCa">
+                                        <rect key="frame" x="0.0" y="132" width="374" height="47"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVO-b4-Fpg">
+                                                <rect key="frame" x="0.0" y="0.0" width="182" height="47"/>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="33"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sky-9u-Q3o" userLabel="User Name">
+                                                <rect key="frame" x="192" y="0.0" width="182" height="47"/>
+                                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="30"/>
+                                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                                                <connections>
+                                                    <action selector="handleUserNameEditingChanged:" destination="Y6W-OH-hqX" eventType="editingChanged" id="12b-EO-vXS"/>
+                                                </connections>
+                                            </textField>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -42,13 +61,14 @@
                         <color key="backgroundColor" red="0.86497670410000005" green="0.56224310399999999" blue="0.71765881779999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="m3s-NK-ano" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="MS2-gJ-eqa"/>
-                            <constraint firstItem="m3s-NK-ano" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.1" id="Wvm-rQ-Xc6"/>
+                            <constraint firstItem="m3s-NK-ano" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.2" id="Wvm-rQ-Xc6"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="m3s-NK-ano" secondAttribute="bottom" constant="200" id="lUb-3B-51Q"/>
                             <constraint firstItem="m3s-NK-ano" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="mXi-sV-yHJ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="hardModeSwitch" destination="uH0-Cl-UE5" id="YXK-VS-ki4"/>
+                        <outlet property="userNameTextField" destination="sky-9u-Q3o" id="kvJ-qA-ZY0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

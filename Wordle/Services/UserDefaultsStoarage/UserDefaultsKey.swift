@@ -9,4 +9,5 @@ enum UserDefaultsKey: String, CodingKey {
     case hardMode = "hardMode"
     case gameManager = "gameManager"
     case leadersBoard = "leadersBoard"
+    case userName = "userName"
 }

@@ -11,6 +11,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var wordsContainer: WordsContainerView!
     @IBOutlet weak var keyboardContainer: KeyboardView!
     @IBOutlet weak var checkWordButton: CheckWordButtonView!
+    @IBOutlet weak var timerLabel: UILabel!
     
     private var gameManager = GameManager()
     private let keyboardManager = KeyboardManager()
@@ -80,5 +81,16 @@ extension GameViewController: GameDelegate {
         wordsContainer.updateGameField(gameManager.gameField)
         keyboardContainer.updateKeyboardButtons(gameManager.gameField)
     }
+    
+    func updateTimer(_ timerCounter: Int) {
+        var timerCounter = timerCounter
+        let hours = max(timerCounter / 360, 0)
+        timerCounter -= (hours * 360)
+        let minutes = max(timerCounter / 60, 0)
+        timerCounter -= minutes * 60
+        
+        timerLabel.text = String("\(hours):\(String(format: "%02d", minutes)):\(String(format: "%02d", timerCounter))")
+    }
 }
+
 

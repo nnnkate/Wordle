@@ -7,4 +7,6 @@
 
 protocol GameDelegate {
     func handleGameEnd(_ gameStatus: GameStatus)
+    
+    func updateTimer(_ timerCounter: Int)
 }

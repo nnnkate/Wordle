@@ -10,8 +10,8 @@ class GameManager {
     private var currentLetterIndexInRow = 0
     private var currentAttemptIndex = 0
     
-    private (set) var lettersCount = 5
-    private (set) var attemptsCount = 6
+    private (set) var lettersCount: Int
+    private (set) var attemptsCount: Int
     
     private (set) var currentWord = ""
     private (set) var allowedWords = Set<String>()
@@ -21,6 +21,9 @@ class GameManager {
     private let fileName = "AllowedWords"
     
     var delegate: GameDelegate?
+    
+    private var timer = Timer()
+    private var timerCounter = 0
     
     private (set) var gameStatus: GameStatus = .playing {
         didSet {
@@ -36,9 +39,11 @@ class GameManager {
         
         self.gameField = Array(repeating: Array(repeating: nil, count: lettersCount), count: attemptsCount)
         
-        fillAllowedWords()
+        self.fillAllowedWords()
         
-        generateRandomWord()
+        self.generateRandomWord()
+        
+        self.startTimer()
     }
     
     // MARK: - Randow Word
@@ -209,8 +214,25 @@ class GameManager {
     
     func checkGameStatus() {
         if gameStatus != .playing {
+            cancelTimer()
             delegate?.handleGameEnd(gameStatus)
         }
+    }
+    
+    // MARK: -Timer
+    
+    private func startTimer() {
+        timerCounter = 0
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+    }
+    
+    private func cancelTimer() {
+            timer.invalidate()
+        }
+    
+    @objc private func timerAction() {
+        timerCounter += 1
+        delegate?.updateTimer(timerCounter)
     }
     
     // MARK: - Restart Game
@@ -226,6 +248,8 @@ class GameManager {
         gameStatus = .playing
         
         lastCheckedRow = nil
+        
+        startTimer()
     }
 }
 

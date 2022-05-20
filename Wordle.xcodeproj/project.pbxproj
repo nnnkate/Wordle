@@ -21,6 +21,7 @@
 		85B74CF4282EC0D300F222A2 /* MainMenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B74CF3282EC0D300F222A2 /* MainMenuButtonView.swift */; };
 		85B74CF8282ECA0400F222A2 /* ProgressStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85B74CF7282ECA0400F222A2 /* ProgressStoryboard.storyboard */; };
 		85B74CFA282ECA4200F222A2 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B74CF9282ECA4200F222A2 /* ProgressViewController.swift */; };
+		85B74CFD2837796B00F222A2 /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B74CFC2837796B00F222A2 /* GameDelegate.swift */; };
 		85C3254F2812ACAF002BFBF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C3254E2812ACAF002BFBF5 /* AppDelegate.swift */; };
 		85C325512812ACAF002BFBF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C325502812ACAF002BFBF5 /* SceneDelegate.swift */; };
 		85C325532812ACAF002BFBF5 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C325522812ACAF002BFBF5 /* GameViewController.swift */; };
@@ -58,6 +59,7 @@
 		85B74CF3282EC0D300F222A2 /* MainMenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuButtonView.swift; sourceTree = "<group>"; };
 		85B74CF7282ECA0400F222A2 /* ProgressStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProgressStoryboard.storyboard; sourceTree = "<group>"; };
 		85B74CF9282ECA4200F222A2 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		85B74CFC2837796B00F222A2 /* GameDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDelegate.swift; sourceTree = "<group>"; };
 		85C3254B2812ACAF002BFBF5 /* Wordle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C3254E2812ACAF002BFBF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85C325502812ACAF002BFBF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +132,38 @@
 			path = MainMenu;
 			sourceTree = "<group>";
 		};
+		85B74CFB2837795600F222A2 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				85B74CFC2837796B00F222A2 /* GameDelegate.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		85B74CFE283781A900F222A2 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				85C325522812ACAF002BFBF5 /* GameViewController.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		85B74CFF283781B500F222A2 /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				85B74CED282EB20000F222A2 /* MainMenuViewController.swift */,
+			);
+			path = MainMenu;
+			sourceTree = "<group>";
+		};
+		85B74D00283781E400F222A2 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				85C325542812ACAF002BFBF5 /* GameStoryboard.storyboard */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
 		85C325422812ACAE002BFBF5 = {
 			isa = PBXGroup;
 			children = (
@@ -152,7 +186,10 @@
 				85CAD990281B338C00E5737B /* Delegates */,
 				85087968281746470067408A /* Extensions */,
 				85C325632812ACC5002BFBF5 /* Models */,
+				85CAD994281BE23300E5737B /* AllowedWords.txt */,
 				85C325622812ACBC002BFBF5 /* Views */,
+				85B74CEF282EBEFD00F222A2 /* SettingsStoryboard.storyboard */,
+				85B74CF7282ECA0400F222A2 /* ProgressStoryboard.storyboard */,
 				85C325642812ACD1002BFBF5 /* ViewControllers */,
 				85FD418128144BD4000191AD /* App */,
 				85C325572812ACB5002BFBF5 /* Assets.xcassets */,
@@ -165,9 +202,7 @@
 		85C325622812ACBC002BFBF5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				85C325542812ACAF002BFBF5 /* GameStoryboard.storyboard */,
-				85B74CEF282EBEFD00F222A2 /* SettingsStoryboard.storyboard */,
-				85B74CF7282ECA0400F222A2 /* ProgressStoryboard.storyboard */,
+				85B74D00283781E400F222A2 /* Game */,
 				85B74CF5282EC0DA00F222A2 /* MainMenu */,
 				85FD4182281454A0000191AD /* Keyboard */,
 				85FD418028144B3C000191AD /* LetterBox */,
@@ -179,7 +214,6 @@
 			isa = PBXGroup;
 			children = (
 				85CAD9A72827B6E200E5737B /* Game */,
-				85CAD994281BE23300E5737B /* AllowedWords.txt */,
 				85CAD99C281C820C00E5737B /* Keyboard */,
 				850879672817034C0067408A /* Letter */,
 			);
@@ -189,8 +223,8 @@
 		85C325642812ACD1002BFBF5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				85C325522812ACAF002BFBF5 /* GameViewController.swift */,
-				85B74CED282EB20000F222A2 /* MainMenuViewController.swift */,
+				85B74CFE283781A900F222A2 /* Game */,
+				85B74CFF283781B500F222A2 /* MainMenu */,
 				85B74CF1282EBF7E00F222A2 /* SettingsViewController.swift */,
 				85B74CF9282ECA4200F222A2 /* ProgressViewController.swift */,
 			);
@@ -200,6 +234,7 @@
 		85CAD990281B338C00E5737B /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
+				85B74CFB2837795600F222A2 /* Game */,
 				85CAD991281B339900E5737B /* Keyboard */,
 			);
 			path = Delegates;
@@ -351,6 +386,7 @@
 				85C325682812AD66002BFBF5 /* LetterBoxView.swift in Sources */,
 				85FD417F281447EE000191AD /* GameManager.swift in Sources */,
 				85B74CF4282EC0D300F222A2 /* MainMenuButtonView.swift in Sources */,
+				85B74CFD2837796B00F222A2 /* GameDelegate.swift in Sources */,
 				85B74CEE282EB20000F222A2 /* MainMenuViewController.swift in Sources */,
 				85C3256C2812AEDF002BFBF5 /* Evaluation.swift in Sources */,
 				85A25127281838F200BBEF73 /* KeyboardManager.swift in Sources */,

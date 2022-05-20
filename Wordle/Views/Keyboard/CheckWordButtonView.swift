@@ -22,6 +22,10 @@ final class CheckWordButtonView: BaseKeyboardButtonView {
     }
     
     @objc override func handleButtonTap() {
+        if self.checkStatus == .notAWord {
+            return
+        }
+        
         delegate?.handleButtonTap(type: .enter)
     }
     

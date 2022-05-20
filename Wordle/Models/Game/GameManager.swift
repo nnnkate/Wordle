@@ -20,6 +20,8 @@ class GameManager {
     
     private let fileName = "AllowedWords"
     
+    var delegate: GameDelegate?
+    
     private (set) var gameStatus: GameStatus = .playing {
         didSet {
             checkGameStatus()
@@ -80,19 +82,6 @@ class GameManager {
         }
     }
     
-    // MARK: - Game Result
-    
-    func checkGameStatus() {
-        if gameStatus == .win {
-            print("win")
-            return
-        }
-        if gameStatus == .lost {
-            print("lost")
-            return
-        }
-    }
-    
     // MARK: - Hahdle Button Tap
     
     func handleButtonTap(type keyboardButtonType: KeyboardButtonType) {
@@ -111,8 +100,7 @@ class GameManager {
             return
         }
         
-        gameField[currentAttemptIndex][currentLetterIndexInRow] =
-        LetterBox(letter: letter, status: nil)
+        gameField[currentAttemptIndex][currentLetterIndexInRow] = LetterBox(letter: letter, status: nil)
         
         currentLetterIndexInRow += 1
     }
@@ -161,7 +149,7 @@ class GameManager {
         }
         
         if enteredWord == currentWord {
-            gameStatus = .win
+            handleGameResult(.win)
             
             return
         }
@@ -170,8 +158,12 @@ class GameManager {
         currentLetterIndexInRow = 0
         
         if currentAttemptIndex == attemptsCount {
-            gameStatus = .lost
+            handleGameResult(.lost)
         }
+    }
+    
+    private func handleGameResult(_ status: GameStatus) {
+        gameStatus = status
     }
     
     private func getEnteredWord() -> String? {
@@ -211,4 +203,27 @@ class GameManager {
 
        return enteredWord
    }
+    
+    // MARK: - Game Result
+    
+    func checkGameStatus() {
+        if gameStatus != .playing {
+            delegate?.handleGameEnd(gameStatus)
+        }
+    }
+    
+    // MARK: - Restart Game
+    
+    func restartGame() {
+        currentLetterIndexInRow = 0
+        currentAttemptIndex = 0
+        
+        generateRandomWord()
+        
+        gameField = Array(repeating: Array(repeating: nil, count: lettersCount), count: attemptsCount)
+        
+        gameStatus = .playing
+        
+        lastCheckedRow = nil
+    }
 }

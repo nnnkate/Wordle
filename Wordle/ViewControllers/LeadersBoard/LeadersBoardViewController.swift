@@ -32,9 +32,7 @@ extension LeadersBoardViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let row = sections[indexPath.section].rows[indexPath.row]
-//
-//        print(row)
+       print("select")
     }
 }
 
@@ -51,11 +49,6 @@ extension LeadersBoardViewController: UITableViewDataSource {
         guard let leadersBoardTableViewCell = leadersBoardTable.dequeueReusableCell(withIdentifier: LeadersBoardTableViewCell.id) as? LeadersBoardTableViewCell else {
             return UITableViewCell()
         }
-
-//        let row = sections[indexPath.section].rows[indexPath.row]
-//
-//        tableViewCell.updateData(imageName: row.imageName,
-//                                 text: row.title)
 
         leadersBoardTableViewCell.updateData(leadersBoardData[indexPath.row].0)
         

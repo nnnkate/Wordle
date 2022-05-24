@@ -16,26 +16,46 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ea7-Xv-dWM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ea7-Xv-dWM">
+                        <rect key="frame" x="20" y="0.0" width="280" height="44"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIO-Ic-Sic" userLabel="UserName">
+                                <rect key="frame" x="0.0" y="0.0" width="135" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Lg-Qd-M5k">
+                                <rect key="frame" x="145" y="0.0" width="135" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="0:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdj-Dm-CYn" userLabel="Time">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.5" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crC-Vt-50H" userLabel="AttemptsCount">
+                                        <rect key="frame" x="127.5" y="0.0" width="7.5" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                     </stackView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIO-Ic-Sic" userLabel="UserName">
-                        <rect key="frame" x="139" y="11" width="36" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ea7-Xv-dWM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="26c-jy-v3Z"/>
                     <constraint firstItem="ea7-Xv-dWM" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="DsP-kE-TDl"/>
-                    <constraint firstItem="ea7-Xv-dWM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="G9U-t8-AW4"/>
+                    <constraint firstItem="ea7-Xv-dWM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="G9U-t8-AW4"/>
                     <constraint firstItem="ea7-Xv-dWM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="KOf-gS-lkC"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="attemptsCountLabel" destination="crC-Vt-50H" id="AfU-Mq-MY6"/>
+                <outlet property="timeLabel" destination="bdj-Dm-CYn" id="XQD-yy-rMh"/>
                 <outlet property="userNameLabel" destination="dIO-Ic-Sic" id="F6r-VR-3F7"/>
             </connections>
             <point key="canvasLocation" x="359" y="60"/>

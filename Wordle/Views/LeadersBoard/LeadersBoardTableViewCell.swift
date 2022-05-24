@@ -11,6 +11,8 @@ class LeadersBoardTableViewCell: UITableViewCell {
     static let id = "LeadersBoardTableViewCell"
     
     @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var attemptsCountLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,7 +25,9 @@ class LeadersBoardTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func updateData(_ text: String) {
-        userNameLabel.text = text
+    func updateData(userName: String, gameResult: GameResult) {
+        userNameLabel.text = userName
+        timeLabel.text = gameResult.timerCounter.getTimerString()
+        attemptsCountLabel.text = String(gameResult.attemptCount)
     }
 }

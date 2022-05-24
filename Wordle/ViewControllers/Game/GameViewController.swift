@@ -79,13 +79,7 @@ extension GameViewController: GameDelegate {
     }
     
     func updateTimer(_ timerCounter: Int) {
-        var timerCounter = timerCounter
-        let hours = max(timerCounter / 360, 0)
-        timerCounter -= (hours * 360)
-        let minutes = max(timerCounter / 60, 0)
-        timerCounter -= minutes * 60
-        
-        timerLabel.text = String("\(hours):\(String(format: "%02d", minutes)):\(String(format: "%02d", timerCounter))")
+        timerLabel.text = timerCounter.getTimerString()
     }
 }
 

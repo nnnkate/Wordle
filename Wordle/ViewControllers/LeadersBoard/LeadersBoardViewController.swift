@@ -30,10 +30,6 @@ extension LeadersBoardViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         40
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       print("select")
-    }
 }
 
 extension LeadersBoardViewController: UITableViewDataSource {
@@ -50,7 +46,8 @@ extension LeadersBoardViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        leadersBoardTableViewCell.updateData(leadersBoardData[indexPath.row].0)
+        leadersBoardTableViewCell.updateData(userName: leadersBoardData[indexPath.row].0,
+                                             gameResult: leadersBoardData[indexPath.row].1)
         
         return leadersBoardTableViewCell
     }

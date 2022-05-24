@@ -224,10 +224,10 @@ class GameManager {
     }
     
     private func updateLeadersBoard() {
-        var leadersBoardArray = UserDefaultsService.shared.decodeObject(type: [[String: GameResult]].self, for: .leadersBoard) ?? [[String: GameResult]]()
+        var leadersBoard = UserDefaultsService.shared.decodeObject(type: [String: GameResult].self, for: .leadersBoard) ?? [String: GameResult]()
         
-        leadersBoardArray.append([userName: GameResult(timerCounter: timerCounter, attemptCount: attemptsCount + 1)])
-        UserDefaultsService.shared.encodeObject(leadersBoardArray.self, for: .leadersBoard)
+        leadersBoard[userName] = GameResult(timerCounter: timerCounter, attemptCount: attemptsCount + 1)
+        UserDefaultsService.shared.encodeObject(leadersBoard.self, for: .leadersBoard)
     }
     
     // MARK: -Timer

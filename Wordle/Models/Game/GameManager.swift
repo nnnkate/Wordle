@@ -226,8 +226,14 @@ class GameManager {
     private func updateLeadersBoard() {
         var leadersBoard = UserDefaultsService.shared.decodeObject(type: [String: GameResult].self, for: .leadersBoard) ?? [String: GameResult]()
         
-        leadersBoard[userName] = GameResult(timerCounter: timerCounter, attemptCount: attemptsCount + 1)
-        UserDefaultsService.shared.encodeObject(leadersBoard.self, for: .leadersBoard)
+        let newGameResult = GameResult(timerCounter: timerCounter, attemptCount: currentAttemptIndex + 1)
+        
+        if leadersBoard[userName]?.attemptCount ?? 0 >= newGameResult.attemptCount {
+            if leadersBoard[userName]?.timerCounter ?? 0 > newGameResult.timerCounter {
+                leadersBoard[userName] = newGameResult
+                UserDefaultsService.shared.encodeObject(leadersBoard.self, for: .leadersBoard)
+            }
+        }
     }
     
     // MARK: -Timer

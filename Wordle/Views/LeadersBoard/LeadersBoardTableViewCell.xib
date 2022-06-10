@@ -21,23 +21,23 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIO-Ic-Sic" userLabel="UserName">
                                 <rect key="frame" x="0.0" y="0.0" width="135" height="44"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Lg-Qd-M5k">
                                 <rect key="frame" x="145" y="0.0" width="135" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="0:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdj-Dm-CYn" userLabel="Time">
-                                        <rect key="frame" x="0.0" y="0.0" width="127.5" height="44"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="118" height="44"/>
+                                        <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="28"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crC-Vt-50H" userLabel="AttemptsCount">
-                                        <rect key="frame" x="127.5" y="0.0" width="7.5" height="44"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="118" y="0.0" width="17" height="44"/>
+                                        <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="28"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -53,10 +53,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" red="0.90621972080000002" green="0.58531022070000005" blue="0.5293903351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <connections>
-                <outlet property="attemptsCountLabel" destination="crC-Vt-50H" id="AfU-Mq-MY6"/>
-                <outlet property="timeLabel" destination="bdj-Dm-CYn" id="XQD-yy-rMh"/>
-                <outlet property="userNameLabel" destination="dIO-Ic-Sic" id="F6r-VR-3F7"/>
+                <outlet property="attemptsCountLabel" destination="crC-Vt-50H" id="VtT-SX-RJf"/>
+                <outlet property="timeLabel" destination="bdj-Dm-CYn" id="bLX-mC-3as"/>
+                <outlet property="userNameLabel" destination="dIO-Ic-Sic" id="61e-y7-Zir"/>
             </connections>
             <point key="canvasLocation" x="359" y="60"/>
         </tableViewCell>

@@ -10,11 +10,11 @@ import Foundation
 extension Int {
     func getTimerString() -> String {
         var timerCounter = self
-        let hours = Swift.max(timerCounter / 360, 0)
+        let hours = timerCounter / 360
         timerCounter -= (hours * 360)
-        let minutes = Swift.max(timerCounter / 60, 0)
+        let minutes = timerCounter / 60
         timerCounter -= minutes * 60
         
-        return String("\(hours):\(String(format: "%02d", minutes)):\(String(format: "%02d", timerCounter))")
+        return "\(hours):\(String(format: "%02d", minutes)):\(String(format: "%02d", timerCounter))"
     }
 }

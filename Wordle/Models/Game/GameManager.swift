@@ -36,7 +36,7 @@ class GameManager {
     private var lastCheckedRow: Int?
     
     init() {
-        if UserDefaultsService.shared.decodeObject(type: Bool.self, for: .hardMode) ?? false {
+        if UserDefaultsService.shared.getBoolValue(for: UserDefaultsKey.hardMode) {
             self.attemptsCount += 1
         }
         
@@ -79,15 +79,6 @@ class GameManager {
         }
               
         return path
-    }
-    
-    // MARK: - Data processing
-    
-    func setCellValue(rowIndex: Int, cellIndex: Int, value: LetterBox?) {
-        if let value = value {
-            gameField[rowIndex][cellIndex] = value
-            lastCheckedRow = rowIndex
-        }
     }
     
     // MARK: - Hahdle Button Tap
@@ -218,7 +209,9 @@ class GameManager {
     func checkGameStatus() {
         if gameStatus != .playing {
             cancelTimer()
-            updateLeadersBoard()
+            if gameStatus == .win {
+                updateLeadersBoard()
+            }
             delegate?.handleGameEnd(gameStatus)
         }
     }
@@ -228,15 +221,15 @@ class GameManager {
         
         let newGameResult = GameResult(timerCounter: timerCounter, attemptCount: currentAttemptIndex + 1)
         
-        if leadersBoard[userName]?.attemptCount ?? 0 >= newGameResult.attemptCount {
-            if leadersBoard[userName]?.timerCounter ?? 0 > newGameResult.timerCounter {
+        if leadersBoard[userName] == nil ||
+            (leadersBoard[userName]?.attemptCount ?? 0 >= newGameResult.attemptCount &&
+             leadersBoard[userName]?.timerCounter ?? 0 > newGameResult.timerCounter) {
                 leadersBoard[userName] = newGameResult
                 UserDefaultsService.shared.encodeObject(leadersBoard.self, for: .leadersBoard)
-            }
         }
     }
     
-    // MARK: -Timer
+    // MARK: - Timer
     
     private func startTimer() {
         timerCounter = 0
@@ -245,7 +238,7 @@ class GameManager {
     
     private func cancelTimer() {
             timer.invalidate()
-        }
+    }
     
     @objc private func timerAction() {
         timerCounter += 1

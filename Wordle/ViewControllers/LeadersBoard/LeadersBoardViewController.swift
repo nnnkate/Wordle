@@ -10,11 +10,13 @@ import UIKit
 class LeadersBoardViewController: UIViewController {
     @IBOutlet weak var leadersBoardTable: UITableView!
     
-    let leadersBoardData: [(String, GameResult)] =
-    (UserDefaultsService.shared.decodeObject(type: [String: GameResult].self, for: .leadersBoard) ?? [String: GameResult]()).map{ ($0.key, $0.value) }
+    lazy var leadersBoardData: [(String, GameResult)] = { uploadLeadersBoardData()
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        leadersBoardTable.backgroundColor = UIColor.clear
         
         leadersBoardTable.delegate = self
         leadersBoardTable.dataSource = self
@@ -22,7 +24,11 @@ class LeadersBoardViewController: UIViewController {
         leadersBoardTable.reloadData()
         
         leadersBoardTable.register(UINib(nibName: "LeadersBoardTableViewCell", bundle: nil),
-                           forCellReuseIdentifier: LeadersBoardTableViewCell.id)
+                                   forCellReuseIdentifier: LeadersBoardTableViewCell.id)
+    }
+    
+    private func uploadLeadersBoardData() -> [(String, GameResult)]  {
+        (UserDefaultsService.shared.decodeObject(type: [String: GameResult].self, for: .leadersBoard) ?? [String: GameResult]()).map{ ($0.key, $0.value) }
     }
 }
 

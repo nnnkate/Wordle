@@ -31,4 +31,8 @@ class UserDefaultsService {
         
         return decodedObject
     }
+    
+    func getBoolValue(for key: UserDefaultsKey) -> Bool {
+        UserDefaults.standard.bool(forKey: key.rawValue)
+    }
 }

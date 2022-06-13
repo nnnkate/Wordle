@@ -32,7 +32,19 @@ class UserDefaultsService {
         return decodedObject
     }
     
+    func setBoolValue(for key: UserDefaultsKey, value: Bool) {
+        UserDefaults.standard.set(value, forKey: key.rawValue)
+    }
+    
+    func setStringValue(for key: UserDefaultsKey, value: String) {
+        UserDefaults.standard.set(value, forKey: key.rawValue)
+    }
+    
     func getBoolValue(for key: UserDefaultsKey) -> Bool {
         UserDefaults.standard.bool(forKey: key.rawValue)
+    }
+    
+    func getStringValue(for key: UserDefaultsKey) -> String {
+        UserDefaults.standard.string(forKey: key.rawValue) ?? ""
     }
 }

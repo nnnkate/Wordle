@@ -237,7 +237,7 @@ class GameManager {
     }
     
     private func cancelTimer() {
-            timer.invalidate()
+        timer.invalidate()
     }
     
     @objc private func timerAction() {

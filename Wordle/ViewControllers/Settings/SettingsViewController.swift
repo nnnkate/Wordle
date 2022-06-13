@@ -23,16 +23,19 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func handleHardModeSwitch(_ sender: UISwitch) {
-        UserDefaultsService.shared.encodeObject(sender.isOn, for: .hardMode)
+        UserDefaultsService.shared.setBoolValue(for: .hardMode, value: sender.isOn)
     }
     
     @IBAction func handleUserNameEditingChanged(_ sender: UITextField) {
-        UserDefaultsService.shared.encodeObject(sender.text, for: .userName)
+        guard let userName = sender.text else { return }
+        
+        UserDefaultsService.shared.setStringValue(for: .userName, value: userName)
     }
     
     private func updateSettings() {
-        hardModeSwitch.isOn = UserDefaultsService.shared.decodeObject(type: Bool.self, for: .hardMode) ?? false
+        hardModeSwitch.isOn = UserDefaultsService.shared.getBoolValue(for: .hardMode)
         
-        userNameTextField.text = UserDefaultsService.shared.decodeObject(type: String.self, for: .userName) ?? ""
+        userNameTextField.text = UserDefaultsService.shared.getStringValue(for: .userName)
+
     }
 }

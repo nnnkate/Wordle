@@ -1,5 +1,5 @@
 //
-//  MainMenuButtonView.swift
+//  MainMenuButton.swift
 //  Wordle
 //
 //  Created by Екатерина Неделько on 13.05.22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainMenuButtonView: UIButton {
+class MainMenuButton: UIButton {
 
     init() {
         super.init(frame: .zero)

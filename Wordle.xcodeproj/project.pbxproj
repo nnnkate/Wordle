@@ -21,7 +21,7 @@
 		85B74CEE282EB20000F222A2 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B74CED282EB20000F222A2 /* MainMenuViewController.swift */; };
 		85B74CF0282EBEFD00F222A2 /* SettingsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85B74CEF282EBEFD00F222A2 /* SettingsStoryboard.storyboard */; };
 		85B74CF2282EBF7E00F222A2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B74CF1282EBF7E00F222A2 /* SettingsViewController.swift */; };
-		85B74CF4282EC0D300F222A2 /* MainMenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B74CF3282EC0D300F222A2 /* MainMenuButtonView.swift */; };
+		85B74CF4282EC0D300F222A2 /* MainMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B74CF3282EC0D300F222A2 /* MainMenuButton.swift */; };
 		85B74CFD2837796B00F222A2 /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B74CFC2837796B00F222A2 /* GameDelegate.swift */; };
 		85B74D062837A5C800F222A2 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B74D052837A5C800F222A2 /* UserDefaultsKey.swift */; };
 		85B74D082837A61E00F222A2 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B74D072837A61E00F222A2 /* UserDefaultsService.swift */; };
@@ -65,7 +65,7 @@
 		85B74CED282EB20000F222A2 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		85B74CEF282EBEFD00F222A2 /* SettingsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsStoryboard.storyboard; sourceTree = "<group>"; };
 		85B74CF1282EBF7E00F222A2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		85B74CF3282EC0D300F222A2 /* MainMenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuButtonView.swift; sourceTree = "<group>"; };
+		85B74CF3282EC0D300F222A2 /* MainMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuButton.swift; sourceTree = "<group>"; };
 		85B74CFC2837796B00F222A2 /* GameDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDelegate.swift; sourceTree = "<group>"; };
 		85B74D052837A5C800F222A2 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		85B74D072837A61E00F222A2 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				85B74CEA282EB12D00F222A2 /* MainMenuStoryboard.storyboard */,
-				85B74CF3282EC0D300F222A2 /* MainMenuButtonView.swift */,
+				85B74CF3282EC0D300F222A2 /* MainMenuButton.swift */,
 			);
 			path = MainMenu;
 			sourceTree = "<group>";
@@ -470,7 +470,7 @@
 				85A2512B28183FD500BBEF73 /* KeyboardView.swift in Sources */,
 				85C325682812AD66002BFBF5 /* LetterBoxView.swift in Sources */,
 				85FD417F281447EE000191AD /* GameManager.swift in Sources */,
-				85B74CF4282EC0D300F222A2 /* MainMenuButtonView.swift in Sources */,
+				85B74CF4282EC0D300F222A2 /* MainMenuButton.swift in Sources */,
 				85B74CFD2837796B00F222A2 /* GameDelegate.swift in Sources */,
 				85333B6528382F1E00F41F73 /* GameResult.swift in Sources */,
 				85B74CEE282EB20000F222A2 /* MainMenuViewController.swift in Sources */,

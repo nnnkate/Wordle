@@ -10,18 +10,19 @@ import UIKit
 class LeadersBoardViewController: UIViewController {
     @IBOutlet weak var leadersBoardTable: UITableView!
     
-    lazy var leadersBoardData: [(String, GameResult)] = { uploadLeadersBoardData()
-    }()
+    lazy var leadersBoardData: [(String, GameResult)] = uploadLeadersBoardData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupLeadersBoardTable()
+    }
+    
+    private func setupLeadersBoardTable() {
         leadersBoardTable.backgroundColor = UIColor.clear
         
         leadersBoardTable.delegate = self
         leadersBoardTable.dataSource = self
-        
-        leadersBoardTable.reloadData()
         
         leadersBoardTable.register(UINib(nibName: "LeadersBoardTableViewCell", bundle: nil),
                                    forCellReuseIdentifier: LeadersBoardTableViewCell.id)

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="gameVC" id="BYZ-38-t0r" customClass="GameViewController" customModule="Wordle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="598-bn-D2b" userLabel="WordsView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="448"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5FD-KQ-g5i" userLabel="Timer">
+                                        <rect key="frame" x="150.5" y="0.0" width="113" height="45"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="odO-3v-W4u" userLabel="WordsContainer" customClass="WordsContainerView" customModule="Wordle" customModuleProvider="target">
+                                        <rect key="frame" x="150.5" y="45" width="113" height="358"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="odO-3v-W4u" firstAttribute="centerX" secondItem="598-bn-D2b" secondAttribute="centerX" id="0Q0-IA-IkC"/>
+                                    <constraint firstItem="odO-3v-W4u" firstAttribute="height" secondItem="598-bn-D2b" secondAttribute="height" multiplier="0.8" id="4pF-m3-YNU"/>
+                                    <constraint firstItem="5FD-KQ-g5i" firstAttribute="centerX" secondItem="598-bn-D2b" secondAttribute="centerX" id="Awh-7J-Xrx"/>
+                                    <constraint firstItem="5FD-KQ-g5i" firstAttribute="top" secondItem="598-bn-D2b" secondAttribute="top" id="Rcn-gG-WMh"/>
+                                    <constraint firstItem="5FD-KQ-g5i" firstAttribute="height" secondItem="598-bn-D2b" secondAttribute="height" multiplier="0.1" id="fec-EB-oe6"/>
+                                    <constraint firstItem="5FD-KQ-g5i" firstAttribute="width" secondItem="odO-3v-W4u" secondAttribute="width" id="lFx-uA-23c"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="odO-3v-W4u" secondAttribute="bottom" constant="10" id="x1o-hk-ruD"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90H-zv-jYV" userLabel="KeyboardView">
+                                <rect key="frame" x="0.0" y="487" width="414" height="269"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="W0c-yz-PGB" customClass="KeyboardView" customModule="Wordle" customModuleProvider="target">
+                                        <rect key="frame" x="41.5" y="27" width="331" height="215"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="W0c-yz-PGB" firstAttribute="centerX" secondItem="90H-zv-jYV" secondAttribute="centerX" id="4lk-OH-zzF"/>
+                                    <constraint firstItem="W0c-yz-PGB" firstAttribute="width" secondItem="90H-zv-jYV" secondAttribute="width" multiplier="0.799517" id="CNp-w6-c8V"/>
+                                    <constraint firstItem="W0c-yz-PGB" firstAttribute="height" secondItem="90H-zv-jYV" secondAttribute="height" multiplier="0.8" id="LF0-wy-ZJd"/>
+                                    <constraint firstItem="W0c-yz-PGB" firstAttribute="centerY" secondItem="90H-zv-jYV" secondAttribute="centerY" id="c8L-oH-qZb"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pCB-yd-8jc" userLabel="CheckWordView">
+                                <rect key="frame" x="0.0" y="751" width="414" height="89.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gf0-Cu-S7s" customClass="CheckWordButtonView" customModule="Wordle" customModuleProvider="target">
+                                        <rect key="frame" x="41.5" y="9" width="331" height="71.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Gf0-Cu-S7s" firstAttribute="centerY" secondItem="pCB-yd-8jc" secondAttribute="centerY" id="0mg-vS-zvn"/>
+                                    <constraint firstItem="Gf0-Cu-S7s" firstAttribute="height" secondItem="pCB-yd-8jc" secondAttribute="height" multiplier="0.8" id="P7x-bf-tmO"/>
+                                    <constraint firstItem="Gf0-Cu-S7s" firstAttribute="width" secondItem="pCB-yd-8jc" secondAttribute="width" multiplier="0.8" id="adg-6F-c0A"/>
+                                    <constraint firstItem="Gf0-Cu-S7s" firstAttribute="centerX" secondItem="pCB-yd-8jc" secondAttribute="centerX" id="zvh-9g-Tbk"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.41254484650000001" green="0.71784061190000004" blue="0.92552012210000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="598-bn-D2b" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="HO5-SH-abb"/>
+                            <constraint firstItem="90H-zv-jYV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="JoC-Vg-gVo"/>
+                            <constraint firstItem="90H-zv-jYV" firstAttribute="bottom" secondItem="pCB-yd-8jc" secondAttribute="top" constant="5" id="Jwp-Ck-mIq"/>
+                            <constraint firstItem="pCB-yd-8jc" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="O91-kC-V8O"/>
+                            <constraint firstItem="598-bn-D2b" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="PNC-vB-Jkx"/>
+                            <constraint firstItem="598-bn-D2b" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="WRy-C6-Rr2"/>
+                            <constraint firstItem="90H-zv-jYV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gdP-UF-Oq9"/>
+                            <constraint firstItem="598-bn-D2b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gx7-V9-w6z"/>
+                            <constraint firstItem="598-bn-D2b" firstAttribute="bottom" secondItem="90H-zv-jYV" secondAttribute="top" constant="5" id="j7j-h5-K7h"/>
+                            <constraint firstItem="pCB-yd-8jc" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="pyg-f7-8sF"/>
+                            <constraint firstItem="90H-zv-jYV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="tK8-yK-Jaa"/>
+                            <constraint firstItem="pCB-yd-8jc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zag-Hl-zMj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="checkWordButton" destination="Gf0-Cu-S7s" id="BWn-eV-iGc"/>
+                        <outlet property="keyboardContainer" destination="W0c-yz-PGB" id="hKO-Lt-5Dt"/>
+                        <outlet property="timerLabel" destination="5FD-KQ-g5i" id="Nr4-1b-SgR"/>
+                        <outlet property="wordsContainer" destination="odO-3v-W4u" id="yyX-ze-jIi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="102.89855072463769" y="-768.08035714285711"/>
+        </scene>
+    </scenes>
+</document>
